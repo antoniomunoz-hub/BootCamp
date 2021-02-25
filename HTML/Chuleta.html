@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Otro titulo Diferente</title>
 </head>
+
 <body>
-    <!-- Utilizamos la siguiente etiqueta para añadir enlace apartado !--> 
-    <a href= "https://roninwear.com">Enlace Material lucha</a> </a>
-<!-- para ir a un archivo nuestro creado creamos 
+    <!-- Utilizamos la siguiente etiqueta para añadir enlace apartado !-->
+    <a href="https://roninwear.com">Enlace Material lucha</a> </a>
+    <!-- para ir a un archivo nuestro creado creamos 
 enlace si es necesario incluso en una carpeta nueva, 
 enalce de ida y en el creado de vuelta -->
     <a href="carpeta/Blog.html">Blog</a>
-    
-    
+
+
     <!-- Linea blanco -->
     <br>
     <!-- linea separadora -->
     <hr>
-<!-- no necesitan etiqueta de cierre -->
-    
-<!-- Titulos / Heading -->
+    <!-- no necesitan etiqueta de cierre -->
+
+    <!-- Titulos / Heading -->
     <h1>Titulo 1</h1>
     <h2>Titulo 2</h2>
     <h3>Titulo 3</h3>
@@ -28,8 +30,195 @@ enalce de ida y en el creado de vuelta -->
     <h5>Titulo 5</h5>
     <h6>Titulo 6</h6>
 
+    <!-- Textos/Parrafos/Paragraphs -->
+    <p> Lorem ipsum<b> dolor sit amet consectetur   adipisicing elit. Delectus odit enim cupiditate dicta quaerat cum commodi
+        doloribus culpa nesciunt, optio atque 
+        vero, quam obcaecati sed?</b><em>Veniam, voluptatem explicabo, ex, maxime
+        incidunt repudiandae dolor atque eos</em> 
+         blanditiis laboriosam quo pariatur nemo perspiciatis iure porro ad
+        accusantium. <s>Amet libero voluptate quos aliquam?</s>
+    </p>
     
+    <!-- nos respeta cualquier tiepo de enter o espacio inncesario -->
+    <pre>Lorem ipsum<b> dolor sit amet consectetur   adipisicing elit. Delectus odit enim cupiditate dicta quaerat cum commodi
+        doloribus culpa nesciunt, optio atque 
+        vero, quam obcaecati sed?</b> Veniam, voluptatem explicabo, ex, maxime
+        incidunt repudiandae dolor atque eos
+         blanditiis laboriosam quo pariatur nemo perspiciatis iure porro ad
+        accusantium. Amet    libero voluptate quos aliquam?
+    </pre>
+    <!-- utilicamos sub para añadir indice  -->
+    <p>La molecula preferida de calquier desarrollador es
+        C<sub>8</sub>A<sub>10</sub>N<sub>0</sub>O<sub>2</sub>
+    </p>
+
+    <!-- sup para elevar a x (ejemplo potencias) -->
+    <p>2<sup>3</sup>=8</p>
+
+    <!-- hora, fecha la parte datetime es a nivel programador no lo ve el usuario-->
+
+    <p>Las clases del Bootcamp empiezan a las <time datetime="9:30">9:30</time></p>
+
+    <br><hr><br>
+
+    <br><br><br><br><br><br>
+
+    <!-- Contenedores/Containers -->
+    
+    <!-- barra de navegacion de nuestra pagina -->
+
+    <nav>
+        <a href="">Equipamiento</a>
+        <a href="">Hombre</a>
+        <a href="">Mujer</a>   
+    </nav>
+
+    <section>
+        <article>
+            <h1>Titulo del articulo</h1>
+            <p>Contenido del articulo</p>
+        </article>
+        <a href="">Leer mas</a>
+    </section>
+
+
+    <!-- Menus laterlaes como los nav pero a los lados -->
+
+    <aside>Menu laterlaes</aside>
+
+    <!-- Pie de pagina, parte que esta abajo -->
+    
+    <footer>
+        <p>Con esto esperamos que os haya gustado</p>
+    </footer>
+
+    <!-- Div representa sujufos para agrupar -->
+    <div class="container">
+        <p>contenedor generico para agrupar elementos</p>
+    </div>
+
+    <br><hr><br>
+    
+    <!-- Listas / list -->
+    <!-- Desordenada -->
+    <ul>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+        <li>elemento 4</li>
+        <li>elemento 5</li>
+    </ul>
+
+    <!-- ordenada -->
+
+    <ol>
+        <li>Elemento</li>
+        <li>Elemento</li>
+        <li>Elemento</li>
+        <li>Elemento</li>
+        <li>Elemento</li>
+    </ol>
+   
+    <!-- Empeieza a partir de x con el comando start -->
+   
+    <ol start="500">
+        <li>Elemento</li>
+        <li>Elemento</li>
+        <li>Elemento</li>
+    </ol>
+
+    <br><hr><br>
+    
+    <!-- Tablas / Tables -->
+    
+    <table> 
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Antonio</td>
+                <td>Muñoz</td>
+                <td>31 Años</td>
+            </tr>
+        </tbody>
+       
+        <!-- foolter dentro de table -->
+       
+        <tfoot>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+            </tr>
+        </tfoot>
+    </table>
+
+<br><hr><br>    
+
+<!-- Formulario / Forms -->
+
+<form action="" method="GET">
+    
+    <div class="imputblock">
+    <label for="nameimput">Nombre:</label><br>
+    <input type="text" id="nameimput" name="username" placeholder="Introduce tu nombre">
+    </div>
+
+    <div class="imputblock">
+        <label for="lastimput">Apellidos:</label><br>
+        <input type="text" id="lastimput" name="lastname" placeholder="Introduce tu Apellidos">
+        </div>
+
+    <div class="imputblock">
+        <label for="emailimput">Email:</label><br>
+        <input required type="email" id="emailimput" name="Email" placeholder="Introduce tu Correo">
+        </div>
+
+    <div class="imputblock">
+         <label for="paswordintput">Contraseña:</label><br>
+         <input required type="password" id="paswordinput" name="pasword" placeholder="Introduce tu Contraseña">
+         </div>
+    
+     <div class="inputblock">
+        <label for="messageintput">Mensaje:</label><br>
+        <textarea type="messageinput" id="mesageinput" name="mesage" cols="50" rows="10" placeholder="Introduce comentario"></textarea>
+        </div>
+
+    <div Class="inputblock">
+        <label for="sexo">Genero</label><br>
+        <select name="sexinput" id="sexinput">
+            <option value="female">Femenino</option>
+            <option value="male">Masculino</option>
+            <option value="Other">Otro</option>
+        </select>
+    </div>
+    
+    <br><br>
+
+    <input type="age" name="ageintpu" id="edad" min="0" max="75">
+
+    <br>
+
+    <input type="date">
+
+    <input type="submit" value="Guardar">
+
+    
+
+    
+
+</form>
+
+
+
+
 </body>
 </body>
 </body>
+
 </html>
