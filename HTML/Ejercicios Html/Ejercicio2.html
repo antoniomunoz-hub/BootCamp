@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Formulario de Registro</h3>
+
+    <form action="" method="Get">
+       
+       
+        <fieldset>
+            <div class="imputblock">
+                <label for="nameimput">Nombre:</label>
+                <input type="text" id="nameimput" name="username" placeholder="Elon">
+                <label for="lastimput">Apellidos:</label>
+                <input type="text" id="lastimput" name="lastname" placeholder="Musk">
+            </div><br>
+
+        
+            <div class="imputblock">
+                <label for="emailimput">Email:</label>
+                <input required type="email" id="emailimput" name="Email" placeholder="nombre@email.com">
+            </div><br>
+            <div class="imputblock">
+                <label for="paswordintput">Contraseña:</label><br>
+                <input required type="password" id="paswordinput" name="pasword" placeholder="*****">
+            </div><br>
+
+            <fieldset>
+            
+                <legend>Genero</legend>
+                <div>
+                    <input type="radio" name="Genero" id="mujerinpunt">
+                    <label for="mujerinpunt">Mujer</label>
+                </div>
+                <div>
+                    <input type="radio" name="Genero" id="hombreinpunt">
+                    <label for="Hombreinpunt">Hombre</label>
+                </div>
+                <div>
+                    <input type="radio" name="Genero" id="otroinpunt">
+                    <label for="otroinpunt">Otro</label>
+                </div>
+            
+            </fieldset>    
+            <div class="imputblock">
+                <label for="contryimput">Pais:</label>
+                <input type="text" id="countryimput" name="coutryname" placeholder="Introduce tu Pais">
+                
+            </div> 
+
+            <br>
+        
+            <div Class="inputblock">
+                <label for="lenguaje">Lenguaje Preogramacion</label><br>
+                <select name="lenguajeinput" id="lenguajeinput">
+                    <option value="java">JavaScrip</option>
+                    <option value="php">PHP</option>
+                    <option value="phyton">Phyton</option>
+                    <option value="otro">Otro</option>
+                </select>    
+
+            </div>        
+            
+            <br>
+                    
+            <fieldset>
+                <legend>Seleccion academia de programacion favorita</legend>
+                    <div>
+                        <input type="radio" name="academia" id="codeinpunt">
+                        <label for="codeinpunt">Code Space Academy</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="academia" id="academy2inpunt">
+                        <label for="academy2inpunt">Academia2</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="academia" id="academy3inpunt">
+                        <label for="academy3inpunt">Academia3</label>
+                    </div>
+            </fieldset>
+
+        </fieldset>
+            
+        <br>
+
+        <div>
+            <input type="checkbox" name="correos" id="correos">
+            <label for="correos">Acepto recibir cientos de miles de correo irrelevante</label>
+        </div>
+        <div>
+            <input type="checkbox" name="terminos" id="condiciones">
+            <label for="condiciones">Acepto los terminos y condiciones</label>
+        </div>
+    
+        <br>
+
+        </select>
+
+        <input type="submit" value="Enviar">
+
+        <input type="reset" value="Vaciar Formulario">
+            
+
+    </form>
+    
+</body>
+</html>

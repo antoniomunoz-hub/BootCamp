@@ -199,12 +199,108 @@ enalce de ida y en el creado de vuelta -->
     </div>
     
     <br><br>
+       
+    <div class="InputBlock">
+        <label for="dateinpum">Edad</label>
+        <input type="age" name="ageintpu" id="edad" min="0" max="75">
 
-    <input type="age" name="ageintpu" id="edad" min="0" max="75">
+        
+        <label for="inputlBlock">Nacimiento</label>
+        <input type="date" name="ageinput" type="number">
 
+    </div>
+<!-- REVISAR CON CLASE 1:10:00 de grabacion -->
+    
+    <div class="inputblock">
+        <label for="CarBrandsinput">Marca de Coche</label>
+        <input type="text" name="carBrand" id="carbrandlist" list="carbrandlist">
+        <datalist id="carbrandlist">
+            <option value="bmw">BMW</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="Seat">Seat</option>
+            <option value="volkswagen">volkswagen</option>
+        </datalist>
+
+    </div>
+    
     <br>
 
-    <input type="date">
+    <fieldset disabled>
+        <legend>Informacion de tu pareja</legend>
+        <div class="imputblock">
+            <label for="nameimput">Nombre:</label><br>
+            <input type="text" id="nameimput2" name="username" placeholder="Introduce tu nombre">
+            </div>
+        
+            <div class="imputblock">
+                <label for="lastimput">Apellidos:</label><br>
+                <input type="text" id="lastimput2" name="lastname" placeholder="Introduce tu Apellidos">
+                </div>
+
+    </fieldset>
+    
+    <br>
+    
+    <fieldset>
+        
+        <legend>Estado Civil</legend>
+        <div>
+        <input type="radio" name="civilstate" id="marriedinpunt">
+        <label for="marriedinpunt">Casado</label>
+        </div>
+        <div>
+            <input type="radio" name="civilstate" id="singleinpunt">
+            <label for="singleinpunt">Soltero</label>
+        </div>
+        <div>
+            <input type="radio" name="civilstate" id="viudoinpunt">
+            <label for="viudoinpunt">viudo</label>
+        </div>
+
+        <br>
+
+        <fieldset>
+        
+            <legend>Productos</legend>
+            <div>
+            <input type="checkbox" name="iphoneproduct" id="iphoneproduct">
+            <label for="iphoneproduct">Iphone</label>
+            </div>
+            <div>
+                <input type="checkbox" name="macbookproduct" id="macbookproduct">
+                <label for="macbookproduct">Mac</label>
+            </div>
+            <div>
+                <input type="checkbox" name="airpods" id="airpods">
+                <label for="airpods">Airpods</label>
+            </div>
+        </fieldset>
+        
+        <label for="fuelleve">Cantidad Gasolina</label>
+        <meter min="0" max="100" id="fuellevel" value="60"></meter>
+        
+        <progress max="100" value="33"></progress>
+        
+        
+        <br><br>
+<!-- Solo tienen sentido dentro del formulario -->
+        <label for="fileinput">subir archivo</label>
+        <input type="file" id="fileinput" name="fileinput">
+        <br>
+        <input type="submit" value="Guardar">
+        <input type="reset" value="Vaciar">
+
+    </form>
+    </fieldset>
+
+    <!-- Multimedia/ Media -->
+    <!-- Para cambiar el tamaño de la foto o video usamos <width> -->
+    <img src="Imagenes/índice.jpeg" alt="">
+
+    
+    <br>
+
+
 
     <input type="submit" value="Guardar">
 
