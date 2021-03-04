@@ -1,0 +1,38 @@
+/* tipo display: none, inline, block, inline-block */
+/* usamos ^ para que selecciones todos los elementos
+en este caso del 0 al 6  */
+
+[class^="box"]{
+background-color: slateblue;
+}
+
+/* Usamos display:none y ocultamos el elemento */
+.box-0{
+    display: none;
+}
+
+.box-5, /* Selecciona el div box class 5*/ 
+.box-6, /* Selecciona el div box class 6*/ 
+.box-5 p, /* Selecciona el parrafo de div box class 5*/ 
+.box-6 p /* Selecciona el parrafo de div box class 6*/ {
+    display: inline;
+}
+
+.box-3, 
+.box-4, 
+.box-3 p, 
+.box-4 p {
+    display: inline-block;
+}
+
+/* Centrar Horizontalmente */
+.x-centered {
+    background-color: teal;
+    height: 50px;
+    width: 25%; /* El padre de widht en este caso es el body */
+    
+    margin: auto;
+}
+
+
+
