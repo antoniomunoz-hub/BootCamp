@@ -173,6 +173,8 @@ en pantalla */
     height: 50px;
     background-color: gray;
     border: 10px solid darkgreen;
+
+    box-sizing: content-box; /* Valor por defectp */
 }
 
 .border-box {
