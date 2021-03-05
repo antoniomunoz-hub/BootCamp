@@ -26,13 +26,156 @@ background-color: slateblue;
 }
 
 /* Centrar Horizontalmente */
-.x-centered {
+.rectangle {
     background-color: teal;
     height: 50px;
     width: 25%; /* El padre de widht en este caso es el body */
-    
-    margin: auto;
+}
+.x-centered {    
+    margin: auto;/* Solo tiene sentido ponerlo auto cuando el porcentaje sea menor de 100%*/ 
 }
 
+/* Poscion Relativa */
+.pos-relative {
+    position: relative;
+    left: 100px;
+    top: -50px;
+    z-index: -1;/* "Capas"*/
+}
 
+/* Posicion absoluta */
 
+.pos-absolute-parent{
+    height: 300px;
+    border: 15px solid tomato;
+
+    /* Si queremos que sea referente al padre ponemos dentro  */
+    position: relative;
+}
+
+.pos-absolute-child{
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+/* llevamos el cuadrado a la mitad de distancia por  derecha luego para centramos usamos -25 en alto y izq*/
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+/*  Posicion Fixded */
+
+.pos-fixed{
+    background-color: #333;
+    padding: 20px 30px;
+
+    position:fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1;
+}
+
+.pos-fixed a{
+    color:white;
+    text-decoration: none;
+}
+
+/* Posicion Sticky una vez llegamos a el lo tenemos siempre presente
+en pantalla */
+
+.pos-sticky{
+    background-color: steelblue;
+    padding: 15px 25px;
+
+    position: sticky;
+    top: 0;
+}
+
+.pos-sticky a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Posicionamiento flotante: divs dentro de otros divs */
+
+.pos-float-parent{
+    border: 5px solid purple;
+    color: white;
+    font-size: 30px;
+    
+}
+
+.pos-float-child-1{
+    background-color: brown;
+    height: 100px;
+    width: 33.3%;
+
+    float:left;
+}
+
+.pos-float-child-2{
+    background-color:blue;
+    height: 100px;
+    width: 33.3%;
+
+    float: right;
+
+}
+
+.pos-float-child-3{
+    background-color: gray;
+    height: 50px;
+    width: 33.3%;
+    float: left;
+
+}
+
+.pos-float-child-4{
+    background-color: coral;
+    height: 50px;
+    width: 100%;
+
+    clear: both;
+}
+
+/* Overflow - Gestion desbordamiento del contenido */
+[class^="overflow-parent"] {
+    border: 3px dashed black;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 100px;
+
+}
+
+.overflow-parent-1{
+    overflow: hidden; /* Oculta lo que sobresale */
+}
+
+.overflow-parent-2{
+    overflow: visible; /* lo muestra aunque sobresalga*/
+}
+
+.overflow-parent-3{
+    overflow: scroll;
+}
+
+/* Tamaño Cajas Box-sizing */
+.box-sizing-parent{
+    width: 200px;
+    height: 200px;
+    border: 5px solid goldenrod;
+}
+
+.box-sizing-child{
+    width: 100%;
+    height: 50px;
+    background-color: gray;
+    border: 10px solid darkgreen;
+}
+
+.border-box {
+    margin-top: 10px;
+    box-sizing: border-box; /* Cuenta los bordes para encaudrar dentro de su padre */
+}
