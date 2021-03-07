@@ -1,0 +1,36 @@
+ul{
+    width: 180px;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+}
+
+ul{
+    border: 1px solid#7c7c7c;
+    border-bottom: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+}
+
+ul li{
+    background: #f4f4f4;
+    border-bottom: 1px solid #7c7c7c;
+    border-top: #fff;
+}
+
+ul li a{
+    color: #333;
+    display: block;
+    padding: .2em 0 .2em .5em;
+    text-decoration: none;
+}
+
+li{
+    
+}
