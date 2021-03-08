@@ -1,0 +1,23 @@
+ul{
+    padding: 0px;
+}
+
+ul>li{
+    color: #333;
+    background-color: #ddd;
+    padding: 4px;
+
+    list-style-position: inside;
+    cursor: pointer;
+    list-style-image: url(/Ejercicio3/imagenes/fast-forward.png);    
+    border: 1px solid rgb(179, 170, 170);
+}
+
+ul>li:last-child{
+    border-top: none;
+}
+
+ul>li:hover{
+    color:indigo;
+    background-color: khaki;
+}

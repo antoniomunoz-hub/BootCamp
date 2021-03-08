@@ -1,9 +1,40 @@
-[class^=Barra]{
-    background-color: grey;
-    margin-left: 50px;
-    margin-right: 50px;
+ul{
+    width: 180px;
 }
 
-.Barra-right{
-    float: right
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+}
+
+ul{
+    border: 1px solid#7c7c7c;
+    border-bottom: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+}
+
+ul li{
+    background: #f4f4f4;
+    border-bottom: 1px solid #7c7c7c;
+    border-top: #fff;
+}
+
+ul li a{
+    color: #333;
+    display: block;
+    padding: .2em 0 .2em .5em;
+    text-decoration: none;
+}
+
+ul>li:last-child{
+    border-top: none;
+}
+
+ul>li:hover{
+    background-color: khaki;
 }
