@@ -1,0 +1,88 @@
+body{
+    color:#fff;
+    background-color: #f4f4f4;
+    margin: 0;    
+}
+
+
+.brand-banner{
+    background-color:coral;
+    color: white;
+    padding: 0;
+    font-size: 18px;     
+}
+
+.navbar{
+    background-color: rgb(58, 57, 57);
+    padding: 8px;
+}
+
+.navbar ul{
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li{
+    display: inline;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+.img-header{
+    background-image: url(/Imagenes/imagen.jpeg);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-position: center right;
+}
+
+.img-header h1{
+    font-size: 4em;
+    line-height: 1.6em;
+    margin: 30px;
+}
+
+.left{
+    width: 70%;
+    padding-right: 50px;
+    color:grey;
+    float: left;
+    box-sizing: border-box;
+
+}
+
+.right{
+    background-color: rgb(73, 72, 72);
+    width: 30%;
+    margin-top:30px;
+    color: white;
+    float: right;
+    box-sizing: border-box;
+}
+
+@media only screen and(max-widht: 768px){
+    .left, .right{
+        float: none;
+        width: 100%;
+    }
+}
+
+.welcom{
+    margin-bottom: 30px;
+}
+
+.img-header h1{
+    font-size: 2em;
+    line-height: 1.3em;
+    margin: 20px 5px;
+}
+
+.navbar li{
+    display: block;
+    margin-top: 15px;
+}
