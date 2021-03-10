@@ -48,9 +48,9 @@ background-color: slateblue;
 .pos-absolute-parent{
     height: 300px;
     border: 15px solid tomato;
-
+    
     /* Si queremos que sea referente al padre ponemos dentro  */
-    position: relative;
+    /* position: relative; */
 }
 
 .pos-absolute-child{

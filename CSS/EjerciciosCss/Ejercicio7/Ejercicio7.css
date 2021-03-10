@@ -1,0 +1,31 @@
+body {
+    background-color: blueviolet;
+}
+.cabecera {
+    
+    justify-content: center;
+    border: 2px solid hotpink;
+    
+}
+
+.hoja-blanco{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    height: 900px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text-parent{
+    justify-content: space-around;
+}
+
+
+.footer{
+    justify-content: center;
+    justify-content: center;
+    border: 2px solid green;
+}
