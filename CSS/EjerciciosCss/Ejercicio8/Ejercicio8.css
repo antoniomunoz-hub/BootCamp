@@ -1,0 +1,34 @@
+.box-parent {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    gap:5px;
+    grid-template-areas: "box-parent box-parent"
+                         "Age-tittle"
+                         "Css-Grid-Layout"
+                         "Main-content side-bar"
+                         "footer-content footer-content";
+}
+
+.box-parent > .box-parent {
+    grid-area: "box-parent";
+    background-color: cadetblue;
+}
+
+.box-parent > .Age-tittle {
+    background-color: violet;
+}
+
+.box-parent > .Css-Grid-Layout {
+    background-color: blue;
+}
+
+.box-parent > .SideBar {
+    background-color: aqua;
+}
+
+.box-parent > .Footer {
+    background-color: burlywood;
+}
+
+
+

@@ -25,12 +25,12 @@ div.card {
 
 /* Elemento flex que cogerá todo el espacio disponible  */
 .content {
-    flex-grow: 1;
+    flex-grow: 1; 
     width: 100%;
 }
 
 /* Estilos individuales */
-.content > div {
+.content > .box {
     height: 30px;
     margin-bottom: 10px;
 }
