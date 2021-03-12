@@ -1,0 +1,38 @@
+.tabla-padre {
+    
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(4, 90px);
+    gap: 8px;
+    
+}
+
+
+[class^="hijos-tabla"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(12, 194, 179);
+    color: azure;
+}    
+
+[class^="hijos-tabla"] {
+    animation-name: aparece;
+    animation-duration: 1s;
+    animation-iteration-count: initial;
+}
+
+@keyframes aparece{
+    from{
+        opaca
+    }
+
+    to{
+        azul
+    }
+}
+
+[class^="hijos-tabla"]:hover {
+    height: 120px;
+    width: 120px;
+}

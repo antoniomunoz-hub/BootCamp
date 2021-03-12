@@ -1,0 +1,89 @@
+.user-icon{
+    color: tomato;
+}
+
+/* Degradados o gradientes de color */
+
+[class^="gradient"] {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.gradient-1 {
+    background: linear-gradient(to right, darkblue, white);
+}
+/* podemos usar tres colores y manipular a que altura queremo que entre  */
+.gradient-2 {
+    background: linear-gradient(to bottom, white, darkblue 20%, white);
+}
+
+.gradient-4{
+    background: radial-gradient(white, blue, red);
+    width: 50%;
+    /*mover horizontal mover vertical  radio desenfoce */
+    box-shadow: 50px 25px 30px black;
+}
+
+/* .gradient-3 {
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1), url(/índice.jpeg);
+} */
+
+
+/* Trnasformaciones */
+
+.transform {
+    height: 100px;
+    width: 100px;
+    background-color: #333;
+
+    transform: translate(300px, -20px) /* Mueve hacia derecha y hacia arriba */ rotate(45deg) /* Rota 45 grados "deg" */ scale(0.5) /* Cambia su tamaño */ skew(25deg);
+    
+}
+
+/* Transiciones */
+
+.transitions{
+    height: 100px;
+    width: 100px;
+    margin-left: 75px;
+    background-color: darkcyan;
+    color: white;
+    cursor: pointer;
+    /* Alinear y centrar contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* transition-property: transform;
+    transition-duration: 0.5s;
+    /* transition-delay: 1s;retarda el inicio de la transformacion */
+    /* transition-timing-function: ease-in-out;  */
+    transition: transform 0.5s ease-in;
+}
+
+.transitions:hover {
+    transform: scale(1.3) rotate(3deg);
+}
+
+/* Animaciones */
+.text-animation {
+    animation-name: slidein;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        color: tomato;
+    }
+
+    50% {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: 0%;
+        color: yellow;
+    }
+}
