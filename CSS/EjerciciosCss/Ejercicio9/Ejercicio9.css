@@ -1,11 +1,18 @@
 .tabla-padre {
     
     display: grid;
+    padding-left: 25%;
     grid-template-columns: repeat(4, 90px);
     grid-template-rows: repeat(4, 90px);
     gap: 8px;
     
 }
+
+[class^="hijos-tabla"]:hover {
+    height: 120px;
+    width: 120px;
+}
+
 
 
 [class^="hijos-tabla"] {
@@ -16,23 +23,84 @@
     color: azure;
 }    
 
-[class^="hijos-tabla"] {
+/* .tabla-padre {
     animation-name: aparece;
-    animation-duration: 1s;
+    animation-duration: 10s;
     animation-iteration-count: initial;
+} */
+
+
+
+.hijos-tabla-1{
+    animation-delay: 1s;
+}
+
+.hijos-tabla-2{
+    animation-delay: 1.5s;
+}
+
+.hijos-tabla-3{
+    animation-delay: 2s;
+}
+
+.hijos-tabla-4{
+    animation-delay: 2.5s;
+}
+
+.hijos-tabla-5{
+    animation-delay: 3s;
+}
+
+.hijos-tabla-6{
+    animation-delay: 3.5s;
+}
+
+.hijos-tabla-7{
+    animation-delay: 4s;
+}
+
+.hijos-tabla-8{
+    animation-delay: 4.5s;
+}
+
+.hijos-tabla-9{
+    animation-delay: 5s;
+}
+
+.hijos-tabla-10{
+    animation-delay: 5.5s;
+}
+
+.hijos-tabla-11{
+    animation-delay: 6s;
+}
+
+.hijos-tabla-12{
+    animation-delay: 6.5s;
+}
+
+.hijos-tabla-13{
+    animation-delay: 7s;
+}
+
+.hijos-tabla-14{
+    animation-delay: 7.5s;
+}
+
+.hijos-tabla-15{
+    animation-delay: 8s;
+}
+
+.hijos-tabla-16{
+    animation-delay: 8.5s;
 }
 
 @keyframes aparece{
     from{
-        opaca
+        opacity: 0;
     }
 
     to{
-        azul
+        opacity: 1;
     }
-}
-
-[class^="hijos-tabla"]:hover {
-    height: 120px;
-    width: 120px;
-}
+} 
