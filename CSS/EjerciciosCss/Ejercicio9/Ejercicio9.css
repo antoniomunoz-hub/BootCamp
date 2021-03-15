@@ -9,8 +9,7 @@
 }
 
 [class^="hijos-tabla"]:hover {
-    height: 120px;
-    width: 120px;
+    scale: 1, 4;
 }
 
 
@@ -21,15 +20,24 @@
     justify-content: center;
     background-color: rgb(12, 194, 179);
     color: azure;
-}    
+    opacity: 0;    
+}
 
-/* .tabla-padre {
+[class^="hijos-tabla"] {
     animation-name: aparece;
     animation-duration: 10s;
-    animation-iteration-count: initial;
-} */
+    animation-iteration-count: ease-in-out;
+}
 
+@keyframes aparece{
+    from{
+        opacity: 0;
+    }
 
+    to{
+        opacity: 1;
+    }
+} 
 
 .hijos-tabla-1{
     animation-delay: 1s;
@@ -95,12 +103,3 @@
     animation-delay: 8.5s;
 }
 
-@keyframes aparece{
-    from{
-        opacity: 0;
-    }
-
-    to{
-        opacity: 1;
-    }
-} 
