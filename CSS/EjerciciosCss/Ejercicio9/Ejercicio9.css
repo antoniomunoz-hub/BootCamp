@@ -25,8 +25,8 @@
 
 [class^="hijos-tabla"] {
     animation-name: aparece;
-    animation-duration: 10s;
-    animation-iteration-count: ease-in-out;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes aparece{
