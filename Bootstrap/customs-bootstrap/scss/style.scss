@@ -1,0 +1,13 @@
+/* Importamos solo lo necesario */ 
+@import "../bootstrap-4.6.0/scss/variables";
+@import "../bootstrap-4.6.0/scss/functions";
+
+
+// Begin customizacion
+
+$theme-colors: (
+    "primary": violet,
+);
+
+// End costumizacion
+@import "../bootstrap-4.6.0/scss/bootstrap.scss";

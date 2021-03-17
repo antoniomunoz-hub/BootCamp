@@ -1,0 +1,15 @@
+.carousel-item {
+  height: 50vh;
+  
+}
+.photo-1 {
+  background-image: url(../imagenes/mustang.jpeg);
+}
+
+.photo-2 {
+  background-image: url(../imagenes/latera.jpeg);
+}
+
+.photo-3{
+  background-image: url(../imagenes/trasera.jpeg);
+}
