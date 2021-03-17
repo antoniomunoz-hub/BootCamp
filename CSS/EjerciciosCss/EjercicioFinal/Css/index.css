@@ -8,6 +8,13 @@ body{
     justify-content: flex-start;
 }
 
+@media only screen and (max-width: 700px){
+    .image{
+        justify-content: left;
+        align-items: center;
+    }
+}
+
 
 .button{
     display: flex;
@@ -45,4 +52,9 @@ body{
 .pie>span{
     color: #7e3af2;
     padding-top: 5px;
+}
+
+.pie>a{
+    text-decoration: none;
+    color: #7e3af2;
 }
