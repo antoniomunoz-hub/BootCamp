@@ -96,3 +96,50 @@ header{
     padding-top: 10px;
 }   
 
+table{ 
+    width: 100%;
+    margin-top: 25px;
+}
+
+tr > th {
+    text-align: left;
+
+}
+
+.fila{
+    padding-left: 2px;
+    padding-top: 5PX;
+}
+
+ img > td {
+    border-radius: 50%;
+}
+
+div[circulo*]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+    .circulo-1{
+    background-color: #feecdc;
+    color: #ff5a1f;
+    }
+
+    .circulo-2{
+        background-color: #def7ec;
+        color: #0e9f6e;
+    }
+
+    .circulo-3{
+        background-color: #e1effe;
+        color: #3f83f8;
+    }
+
+    .circulo-4{
+        background-color: #d5f5f6;
+        color: #0694a2;
+    }
