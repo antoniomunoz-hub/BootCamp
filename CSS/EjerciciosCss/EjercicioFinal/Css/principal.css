@@ -80,12 +80,13 @@ header{
 
 [class^="box-hijos"] {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 300px;
-    height: 100px;
+    height: 90px;
     border: 2px solid grey;
     border-radius: 8px;
+    padding: 15px;
 }
 
 .box-parent {  
@@ -99,6 +100,7 @@ header{
 table{ 
     width: 100%;
     margin-top: 25px;
+    border-collapse: collapse;
 }
 
 tr > th {
@@ -111,18 +113,20 @@ tr > th {
     padding-top: 5PX;
 }
 
- img > td {
+  td  img {
     border-radius: 50%;
 }
 
-div[circulo*]{
+[class^="circulo"]{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60px;
-    height: 50px;
+    height: 60px;
     border-radius: 50%;
 }
+
+
 
     .circulo-1{
     background-color: #feecdc;
@@ -142,4 +146,41 @@ div[circulo*]{
     .circulo-4{
         background-color: #d5f5f6;
         color: #0694a2;
+    }
+
+    .datos > p {
+        margin-left: 10px;
+    }
+
+    [class^="fila"]{
+        border-bottom: solid black 1px ;
+        padding-top: 3px;
+    }
+
+    [class^="persona"] {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    ul a{
+        text-decoration: none; 
+        padding-left: 10px;
+        padding-right: 10PX;
+           
+    }
+
+    ul{
+        list-style: none ;
+    }
+    
+
+    .paginas{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .pie{
+        display: flex;
     }
