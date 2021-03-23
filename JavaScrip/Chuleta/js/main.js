@@ -185,22 +185,22 @@ console.log(selectedColors, selectedColors.length);
 selectedColors.push("voileta"); //RECOMENDADA
 console.log(selectedColors, selectedColors.length);
 
-selectedColors.pop();
+selectedColors.pop();// Elimina el ultimo elemento
 console.log(selectedColors, selectedColors.length);
 
-selectedColors.unshift("white");
+selectedColors.unshift("white"); // Añadir un nuevo elemento al pricipio
 console.log(selectedColors, selectedColors.length);
 
-selectedColors.shift("white");
+selectedColors.shift("white"); // Elimina el primer elemento
 console.log(selectedColors, selectedColors.length);
 
-selectedColors.sort();
+selectedColors.sort();// Orcena alfabeticamente
 console.log(selectedColors, selectedColors.length);
 
-console.log("El rojo esta en el indice ", selectedColors.indexOf("red"));
+console.log("El rojo esta en el indice ", selectedColors.indexOf("red")); // Localiza la posicion del elemento dentro del array
 console.log(selectedColors);
 
-console.log(selectedColors.slice(1, 3));
+console.log(selectedColors.slice(1, 3)); // Elimina elementos
 console.log(selectedColors);
 
 console.log("Los elementos Borrados son: ", selectedColors.splice(1, 3));
@@ -237,16 +237,160 @@ console.log(chico.amigos);
 
 const randonNumber = 9;
 const quessedNumber = "9";
+
 if(typeof randonNumber !== typeof quessedNumber){
     console.log("Hey tienen diferente clase");
 }
 
-if (randonNumber === quessedNumber) {
-    console.log("Has acertado el numero");
-} else if (randonNumber > quessedNumber) {
-    console.log("El numero secreto es mayor");
-} else if (randonNumber < quessedNumber) {
-    console.log("El numero secreto es menor");
+// if (randonNumber === quessedNumber) {
+//     console.log("Has acertado el numero");
+// } else if (randonNumber > quessedNumber) {
+//     console.log("El numero secreto es mayor");
+// } else if (randonNumber < quessedNumber) {
+//     console.log("El numero secreto es menor");
+// }
+
+// ---------- Ternary Operator ----------
+
+// Si es cierto primer string, sino automaticamente pasa al segundo
+let variable = 12 < 10 ? "el primero es menor " : "el primero es mayor"
+console.log(variable);
+
+let hombre = {
+    name: "Oscar",
+    blonde: false,
+    age: 30,
+    presentarse(){
+        console.log(`Me llaman ${this.name}, tengo ${this.age} años y ${this.blonde ? "soy rubio" : "no soy rubio"}`);
+    }    
 }
+
+hombre.presentarse();
+
+// ---------- Switch ----------
+let option = 3;
+switch(option) {
+    case 1:
+        //Bloque de codigo para valor 1
+        console.log("Option vale 1");
+        break;
+    case 2:
+        //Bloque de codigo para valor 2
+        console.log("Option vale 2");
+        break;
+    case 3:
+        //Bloque de codigo para valor 3
+        console.log("Option vale 3");
+        break;
+    default: //De otro modo Pseint
+    console.log("Otra opcion");
+        break;
+}
+
+console.clear();
+// ---------- Funciones ----------
+
+// Nombradas
+function greet (name, lastName) {
+    console.log(`Hola, ${name} ${lastName}. ¿Que tal?`);
+}
+
+greet();
+greet("Marcos", "Aurelio")
+
+function cuadrado (num1) {
+    let cuadrado = num1 * num1;
+    return cuadrado;
+}
+
+console.log(cuadrado(5));  
+
+
+//Anonimos
+let numbersArray = [5, 51, 1, 15, 2];
+console.log(numbersArray);
+numbersArray.sort();
+console.log(numbersArray);
+
+function orderNumbers(a, b) {
+    if (a < b){
+        return -1;
+    } else if (a === b) {
+        return 0;
+    } else{
+        return 1;
+    }
+}
+
+// numbersArray.sort(orderNumbers);
+numbersArray.sort(function (a, b){ return a - b});
+
+console.log(typeof orderNumbers, typeof function (a, b) {return a -b});
+console.log(numbersArray);
+
+console.clear();
+//Arrow Funtion
+
+// const perimeterOfSquare = (side) => side *4; 
+
+let perimeterOfSquare = function (side){
+    return side*4;
+}
+perimeterOfSquare = function (side) {return side * 4;} //opcional una unica linea
+perimeterOfSquare = (side) => {return side * 4;} //sustituyo function por la flesa despues de
+perimeterOfSquare = (side) => side * 4; // Si solo quiero devolver algo quito llaves y return
+perimeterOfSquare = side => side * 4; // si solo tiene 1 param  puedo quitar parentesis 
+
+console.log(perimeterOfSquare(5));
+
+// console.log(typeof function(){});
+// console.log(typeof (()=> {}));
+
+
+//transformar funcion anonima en funcion flehcas
+
+numbersArray.sort(function(a, b) {return a - b});
+numbersArray.sort((a, b) => a - b);
+console.log(numbersArray);
+
+//Crea funcion flecha con el siguiente codigo
+// function cuadrado (num1) {
+//     let cuadrado = num1 * num1;
+//     return cuadrado;
+// }
+
+// console.log(cuadrado(5)); 
+
+let elevado2 = num1 => num1 * num1;
+console.log(elevado2(6));
+
+//----------- For ------------
+
+for(let i = 0; i <= 10; i++){
+    console.log(`Indice: ${i}`);
+}
+//Definir y rellenar un array con el indice 1
+
+const arrayx = [];
+
+
+for(let i = 0; i <= 10; i++) {
+   (arrayx.push(i));
+}
+
+console.log(arrayx);
+
+// while
+let contador = 0;
+while(contador <= 10) {
+    console.log(contador);
+    contador++;
+}
+
+//forEach
+numbersArray.forEach(function(item){
+console.log(item);
+console.log( `Indice ${index}: ${value}`);
+});
 
 
