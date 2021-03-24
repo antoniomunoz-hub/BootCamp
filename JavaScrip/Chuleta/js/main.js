@@ -387,10 +387,62 @@ while(contador <= 10) {
     contador++;
 }
 
+while (true){
+    break;
+}
+
+console.log("No entra en bucle");
+
 //forEach
-numbersArray.forEach(function(item){
-console.log(item);
-console.log( `Indice ${index}: ${value}`);
+console.log(numbersArray);
+
+numbersArray.forEach(function(item, index) {
+    console.log( `Indice ${index}: ${item}`);
 });
 
+
+numbersArray.forEach((item, index) => console.log(`Indice ${index}: valor ${item}`));
+
+//Copiar un array a otro vacio
+
+let otherArray = [];
+console.log(otherArray);//Cuidado con consola navegador 
+
+numbersArray.forEach(item => otherArray.push(item));
+console.log(otherArray);
+
+
+//----------- For Of ----------
+
+for(let item of numbersArray){
+    console.log(item);
+}
+
+// ----------- Continue ----------
+
+for (let i = 0; i < 5; i++) {
+    if(i === 3) {
+        continue;// Salta a la siguiente iteracion
+    }
+    console.log("Using Continue", i);
+}
+
+//------------ Break -----------
+let i = 0;
+let k;
+
+mainLoop: while(true){
+    console.log("Outer loop", i);
+    i++;
+    k = 1;
+    while (true) {
+       console.log("Inner loop", k);
+       k++;
+       if (i === 5 && k === 5){
+           break mainLoop;
+       }  else if(k === 5) {
+           break;
+       }
+    }
+}
 
