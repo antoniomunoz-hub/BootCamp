@@ -103,3 +103,52 @@ parent2.appendChild(link);
 link.textContent = "Pincha aqui";
 link.setAttribute("href", "https://google.com") //REVISAR 3:55h del video
 grandParent.appendChild(link);
+
+
+//Events
+
+const colorButton = document.getElementsByTagName("button")[0]; //si solo seleccionamos el button nos devuelve un html le ponemos 0 porque se "comporta" como un array y es su posicion primera
+colorButton.addEventListener("click", function(event){
+    // console.log(event);
+    console.log(event.target);
+    // document.body.classList.toggle("bg-red"); //estilo ya creado
+    // console.log(event.target.tagName);
+    if (event.ctrlKey) {
+       document.body.classList.toggle("bg-red");
+    }
+    
+    console.log(`x: ${event.clientX} | y: ${event.clientX}`);
+    console.log(`Alt: ${event.altKey}. Shift: ${event.shiftKey}. ctrl: ${event.ctrlKey}`);
+});
+
+
+const emailInput = document.querySelector("#emailInput");
+emailInput.addEventListener("focus", inputListener);//entra en el input
+emailInput.addEventListener("blur", inputListener);//sale del input
+
+function inputListener (e) {
+    console.log("Tipo de evento: ", e.type);
+    if ( e.type === "focus") {
+        "2px solid blue"; //cuando entra en input se pone borde azul
+    
+    }else if (e.type === "blur"){
+        e.target.style.borderColor = "red"; //cuando salimos borde rojo
+    }
+}
+
+const changeTitle = e => {
+    document.querySelectorAll("h1")[2].textContent = emailInput.value; //Propiedad value input es lo que insertamos dentro del input
+}
+
+emailInput.addEventListener["keydown", inputListener];
+emailInput.addEventListener("keyup", changeTitle);
+
+const container = document.getElementById("container");
+
+container.addEventListener("mouseover", inputListener);
+container.addEventListener("mouseout", inputListener);
+
+function coords (e){
+    document.querySelectorAll("h1")[3].textContent = `x: ${event.clientX} | y: ${event.clientX}`;
+}
+document.body.addEventListener("mousemove", coords);

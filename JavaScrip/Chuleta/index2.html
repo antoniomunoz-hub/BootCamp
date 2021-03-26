@@ -22,7 +22,9 @@
             gap: 25px;
             padding: 25px;
             flex-grow: 1;
+            flex-wrap: wrap;
         }
+
 
         .parent{
             background-color: darkcyan;
@@ -34,6 +36,15 @@
 
         .bg-red{
             background-color: red;
+        }
+
+        button {
+            margin: 50px;
+            border: 3px solid gray;
+        }
+
+        .button{
+            border:3px solid green;
         }
     </style>
 </head>
@@ -55,7 +66,17 @@
         </div>
     </div>
 
+    <h1>Eventos</h1>
+    <div class="button" id="container">
+        <button>Cambiar Color</button>
+    </div>
 
+
+    <label for="emailInput">Introduce tu Email</label>
+    <input type="email" name="" id="emailInput">
+
+    <h1>Coords</h1>
+    
     <script>
         function saludo () {
         alert("Hola desde un script interno");
