@@ -31,6 +31,19 @@
         .child{
             background-color: khaki;
         }
+
+        .bg-red{
+            background-color: red;
+        }
+
+        button {
+            margin: 50px;
+            border: 3px solid gray;
+        }
+
+        .button{
+            border:3px solid green;
+        }
     </style>
 </head>
 <body>
@@ -51,14 +64,42 @@
         </div>
     </div>
 
-
-    <script>
-        function saludo () {
-        alert("Hola desde un script interno");
-        console.log("has hecho click");
-        }
-        document.getElementsByTagName("a").item(1).addEventListener("click", saludo);
-    </script>
+    <body>
+        <h1>Procesar JavaScrip</h1>
+        <a href="#" onclick="alert(`Hola desde un scrip inline`)">Inline</a>
+        <a href="#">Internal scrip</a>
+        <a href="#">External scrip</a>
+    
+        <h1>Acceso al DOM</h1>
+        <div class="grandparent" id="grandparent" >
+            <div class="parent bg-dark rounded d-flex" id="parent1">
+                <div class="child" id="child1"><span>Child 1</span></div>
+                <div class="child" id="child2">Child 2</div>
+            </div>
+            <div class="parent" id="parent2">
+                <div class="child" id="child3">Child 3</div>
+                <div class="child" id="child4">Child 4</div>
+            </div>
+        </div>
+    
+        <h1>Eventos</h1>
+        <div class="button" id="container">
+            <button>Cambiar Color</button>
+        </div>
+    
+    
+        <label for="emailInput">Introduce tu Email</label>
+        <input type="email" name="" id="emailInput">
+    
+        <h1>Coords</h1>
+        
+        <script>
+            function saludo () {
+            alert("Hola desde un script interno");
+            console.log("has hecho click");
+            }
+            document.getElementsByTagName("a").item(1).addEventListener("click", saludo);
+        </script>
     <script src="js/main.js"></script>
     <script src="js/dom.js"></script>
 </body>
