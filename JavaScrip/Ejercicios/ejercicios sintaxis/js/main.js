@@ -41,3 +41,26 @@ console.log(`El string tiene una longitud de`, numberString(`Soñando`), `: letr
 
 const segs = (minutos) => 60 * minutos;
 console.log(segs(5));
+
+//6
+
+// function parNumber(n1){
+//     if( n1 / 2 == 0){
+//         console.log(n1);
+//     }else (n1 + 1){
+//         console.log(n1);
+//     }
+
+// }
+
+//7 
+const lifeDays = (años) => 365 * años;
+console.log(lifeDays(7));
+
+//8
+
+
+//9
+
+const legs = [2, 4, 8];
+console.log(legs);
