@@ -53,14 +53,57 @@ console.log(segs(5));
 
 // }
 
-//7 
+7 
 const lifeDays = (años) => 365 * años;
 console.log(lifeDays(7));
 
-//8
-
+// //8
+// let phones = [apple, samsung, xiaomi];
+// let last =[phones.length -1];
+// const lastElement = (phones) => console.log(last); 
 
 //9
 
-const legs = [2, 4, 8];
-console.log(legs);
+function cuentaPatas (pollos, vacas, cerdos) {
+    let patasPollos = 2 * pollos;
+    let patasVacas = 4 * vacas;
+    let patasCerdos = 4 * cerdos;
+    return patasPollos + patasVacas + patasCerdos;
+}
+
+console.log(cuentaPatas(5, 2, 8));
+
+//10    
+
+function sameType (dat1, dat2) {
+    if (typeof dat1 === typeof dat2){
+        return "Son Iguales";
+    } else {
+        return "Son Distintos";
+    }
+}
+
+console.log(sameType("5", 6));
+
+//11
+
+function stringArray (frase) {
+    return frase.split(" ");   
+}
+
+console.log(stringArray("Esta vida loca"));
+
+//13
+
+function parseDomain(direccion) {
+   let particion = direccion.split(".");
+   return {
+       domain: particion[0],
+       tld: particion[1]
+   }
+}
+
+console.log(parseDomain("nintendo.es"));
+
+
+// dat1 == dat2 && typeof dat1 == typeof dat2
