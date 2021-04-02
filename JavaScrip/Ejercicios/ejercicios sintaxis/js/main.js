@@ -105,5 +105,47 @@ function parseDomain(direccion) {
 
 console.log(parseDomain("nintendo.es"));
 
+//14
 
-// dat1 == dat2 && typeof dat1 == typeof dat2
+function sameType2 (dat1, dat2){
+    if (dat1 == dat2 && typeof dat1 == typeof dat2){
+    return "True";
+    } else {
+        return "False";
+    }
+}
+
+console.log(sameType2(5, 5));
+
+//15
+
+function sameLength(dat1, dat2){
+    if (dat1.length === dat2.length){
+    return "True"
+    } else {
+        return "False"
+    }
+}
+
+console.log(sameLength("Hola", "Dia"));
+
+//16
+
+function vacio(dat){
+    if (dat = " "){
+        return "Esta vacio"
+    } else {
+        return "Tiene Contenido"
+    }
+}
+
+console.log(vacio("hola"));
+
+//17
+
+//18
+
+function multDat (dat, n) {
+    return 
+
+}
