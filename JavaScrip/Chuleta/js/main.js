@@ -194,7 +194,7 @@ console.log(selectedColors, selectedColors.length);
 selectedColors.shift("white"); // Elimina el primer elemento
 console.log(selectedColors, selectedColors.length);
 
-selectedColors.sort();// Orcena alfabeticamente
+selectedColors.sort();// Ordena alfabeticamente
 console.log(selectedColors, selectedColors.length);
 
 console.log("El rojo esta en el indice ", selectedColors.indexOf("red")); // Localiza la posicion del elemento dentro del array
