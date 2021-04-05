@@ -59,12 +59,12 @@ console.log(segs(5));
 //         return n1 + 1
 //     }
 
-//6
+//7
 
 const lifeDays = (años) => 365 * años;
 console.log("Has Vivido", lifeDays(7));
 
-// //8
+//8
 let phones = ["apple", "samsung", "xiaomi"];
 const lastElemen = (array) => array[array.length-1]; 
 
@@ -132,6 +132,9 @@ let adress2 = {
     planta:"x ",
     puerta: "2345 ",
 }
+
+console.log(adress1);
+console.log(adress2);
 //13
 
 function parseDomain(direccion) {
@@ -262,3 +265,15 @@ const filetrItem = (array, numberToFilter) => {
 const arrayFiltered = [1, 5, 6, 7, 5];
 filetrItem(arrayFiltered, 5);
 console.log(arrayFiltered);
+
+//27
+
+
+function sameStrings (a, b){
+    if (a.equalsIgnoreCase(b)) {
+    System.out.println("a y b son iguales");
+    }
+}
+
+
+console.log(sameStrings("Hola", "HOLA"));
