@@ -271,7 +271,7 @@ console.log(arrayFiltered);
 
 function sameStrings (a, b){
     if (a.equalsIgnoreCase(b)) {
-    System.out.println("a y b son iguales");
+    console.log("a y b son iguales");
     }
 }
 
