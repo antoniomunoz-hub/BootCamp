@@ -248,23 +248,23 @@ console.log(getParsedNumbers(["1.5", "10", "34"]));
 
 //22
 
-const isPositive = num
+// const isPositive = num
 
 //23
-const remoteItem = (array, index) => array.splice(index, 1);
+// const remoteItem = (array, index) => array.splice(index, 1);
 
 //24
-const filetrItem = (array, numberToFilter) => {
-    array.forEach((item, index) => {
-        if (item === numberToFilter){
-            removeItem(array, index);
-        }
-    });
-}
+// const filetrItem = (array, numberToFilter) => {
+//     array.forEach((item, index) => {
+//         if (item === numberToFilter){
+//             removeItem(array, index);
+//         }
+//     });
+// }
 
-const arrayFiltered = [1, 5, 6, 7, 5];
-filetrItem(arrayFiltered, 5);
-console.log(arrayFiltered);
+// const arrayFiltered = [1, 5, 6, 7, 5];
+// filetrItem(arrayFiltered, 5);
+// console.log(arrayFiltered);
 
 //25
 
@@ -288,39 +288,32 @@ console.log(valoresArray(clase));
 
 function stringInvertido(texto) {
     return texto.split('').reverse().join('');
-}
+} 
 
 console.log(stringInvertido('JavaScript'));
 
 //27
 
-function compara(cad1, cad2) {
-    if (String(cad1.toLowercase()) == String(cad2.toLowercase()))
-    return "Son Iguales";
-    else {
+function comparation(a, b){
+    if (a.toLowerCase () == b.toLowerCase ()){
+        return "Son Iguales";
+    }else{
         return "Son Diferentes";
     }
 }
 
-console.log(compara("Hola", "hola"));
-
-function sameStrings (a, b){
-    if (a.equalsIgnoreCase(b)) {
-    console.log("a y b son iguales");
-    }
-}
-
-
-console.log(sameStrings("Hola", "HOLA"));
+console.log(comparation("Hola", "hola"));
 
 //28
 
 function letraMayuscula (a) {
-    a = a.toLowerCase()
+    a = a.toLowerCase() 
     .split(' ')
     .map((a) => a.charAt(0).toUpperCase() + a.substring(1))
     .join(' ');
     console.log(a);
 }
 
-letraMayuscula(j);
+letraMayuscula("jose manuel");
+
+//29

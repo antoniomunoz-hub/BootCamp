@@ -64,21 +64,21 @@ textArea.addEventListener("input", e => {
 
 //6
 
-// const evenInput = querySelector("#evenNumberInput")
-// evenInput.nextElementSibling.addEventListener("click", () => {
-//     if (evenInput.value % 2 === 0) {
-//         evenInput.style.border = "2px solid red";
-//     } else {
-//         evenInput.style.border = "";
-//     }
-// });
+const evenInput = document.querySelector("#evenNumberInput");
+evenInput.nextElementSibling.addEventListener("click", () => {
+    if (evenInput.value % 2 !== 0) {
+        evenInput.style.border = "2px solid red";
+    } else {
+        evenInput.style.border = "";
+    }
+});
 
 
 //7
 
-// const ul = document.getElementById("listToFill");
+const ul = document.getElementById("listToFill");
 
-for ( let i = 1; i<= 10; i++ ) {
+for ( let i = 1; i <= 10; i++ ) {
     const newLi = document.createElement("li");
     newLi.textContent = `Elemento ${i}`;
     ul.appendChild(newLi);
@@ -93,7 +93,7 @@ newButton.addEventListener("click", () => link.target = "_blank");
 
 //9
 
-const ap9Parrafo = document.querySelector("#colorsParagraph");
+const ap9Paragraph = document.querySelector("#colorsParrafo");
 document.querySelector("#colorsSelect").addEventListener("change", e => {
-    ap9Parrafo.style.color = e.target.value;
+    ap9Paragraph.style.color = e.target.value;
 });
