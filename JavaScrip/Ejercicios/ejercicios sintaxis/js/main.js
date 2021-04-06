@@ -266,8 +266,43 @@ const arrayFiltered = [1, 5, 6, 7, 5];
 filetrItem(arrayFiltered, 5);
 console.log(arrayFiltered);
 
+//25
+
+function propiedadesArray(object){
+    return Object.keys(object);
+}
+
+let clase = {
+    profesor: "cristian",
+    alumno: "maria",
+    alumno2: "elvira",
+}
+
+console.log(propiedadesArray(clase));
+
+const valoresArray = (object) => Object.values(object);
+
+console.log(valoresArray(clase));
+
+//26
+
+function stringInvertido(texto) {
+    return texto.split('').reverse().join('');
+}
+
+console.log(stringInvertido('JavaScript'));
+
 //27
 
+function compara(cad1, cad2) {
+    if (String(cad1.toLowercase()) == String(cad2.toLowercase()))
+    return "Son Iguales";
+    else {
+        return "Son Diferentes";
+    }
+}
+
+console.log(compara("Hola", "hola"));
 
 function sameStrings (a, b){
     if (a.equalsIgnoreCase(b)) {
@@ -277,3 +312,15 @@ function sameStrings (a, b){
 
 
 console.log(sameStrings("Hola", "HOLA"));
+
+//28
+
+function letraMayuscula (a) {
+    a = a.toLowerCase()
+    .split(' ')
+    .map((a) => a.charAt(0).toUpperCase() + a.substring(1))
+    .join(' ');
+    console.log(a);
+}
+
+letraMayuscula(j);
