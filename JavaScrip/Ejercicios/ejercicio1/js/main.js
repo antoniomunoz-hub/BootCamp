@@ -86,14 +86,66 @@ for ( let i = 1; i <= 10; i++ ) {
 
 //8
 
-const newTabButton = document.querySelector("#newTab");
-const link = document.querySelector("a");
-newButton.addEventListener("click", () => link.target = "_blank");
+// const newTabButton = document.querySelector("#newTab");
+// const link = document.querySelector("a");
+// newButton.addEventListener("click", () => link.target = "_blank");
 
 
 //9
 
-const ap9Paragraph = document.querySelector("#colorsParrafo");
-document.querySelector("#colorsSelect").addEventListener("change", e => {
+const ap9Paragraph = document.getElementById("colorsParrafo");
+document.getElementById("colorsSelect").addEventListener("change", e => {
     ap9Paragraph.style.color = e.target.value;
 });
+
+
+//10
+
+const currentRandom = document.getElementById("currentRandom");
+const totalNumbers = document.getElementById("totalNumbers");
+const oddNumbers = document.getElementById("oddNumbers");
+const evenNumbers = document.getElementById("evenNumbers");
+
+document.getElementById("randomButton").onclick = () => {
+    const randomNumber = Math.floor(Math.random()*100);
+    currentRandom.textContent = randomNumber;
+
+    totalNumbers.textContent++
+    
+    randomNumber % 2 === 0 ? evenNumbers.textContent++ : oddNumbers.textContent++;
+}; 
+
+//11 
+
+const ulAptll = document.getElementById("ulAptll");
+const inputAptll = document.getElementById("inputAptll");
+const buttonAptll = document.getElementById("buttonAptll");
+let numberList = [13, 27, 54, 86];
+
+// function fillList () {
+//     // VACIA LA LISTA Y LA RELLENA DE NUEVO ELEMENTO A ELEMENTO
+//     ulAptll.innerHTML = "";
+//     for (let number of numberList) {
+//         newLi = document.createElementNS('li');
+//         newLi.textContent = number;
+//         ulAptll.appendChild(newLi);
+//     }
+// }
+
+// function addToList () {
+//     // PARSEA EL INPUT COMPRUEBA SI EXISTE Y LO AÑADE
+//     let numberToJoin = Number (inputAptll.value);
+//     if(numberList.indexOf(numberToJoin) === -1) {
+//         numberList.push(numberToJoin);
+//         fillList();
+//     } else {
+//         window.alert (`Este numero ya esta en la lista`);
+//     }
+// }
+
+// fillList();
+// buttonAptll.addEventListener(`click`, addToList);
+
+//12
+
+document.querySelector("#toggler").onclick = (e) => e.target.classList.toggle("btn");
