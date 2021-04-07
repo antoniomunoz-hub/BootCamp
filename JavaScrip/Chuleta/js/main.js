@@ -53,6 +53,7 @@ function saludo () {
     
     
     // ----------Primitivos----------
+    
     let str = String("Im a string");
     let str2 = "Im another string"; // Recomendado  
     console.log(typeof str, typeof str2, typeof "");
@@ -151,6 +152,7 @@ function saludo () {
     // {} Objeto, [] Array tambien es objeto, "" String
     console.log(typeof{}, typeof [], typeof"");
 
+    
 
 // ----------This-----------
 
@@ -174,6 +176,29 @@ person2.talk();
 person3.talk();
 
 console.clear();
+
+//Object Constructor using functions
+
+function Car(brand, color, weight,topSpeed){
+    this.brand = brand;
+    this.color = color;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.getDescription = function(){
+        return `This ${this.color} ${this.brand} weights ${this.weight}`+
+        `kilos and can reach up to ${this.topSpeed} km/h`
+    }
+}
+
+const car1 = new Car("Mercedes", "red", 2000, 260);
+const car2 = new Car("Volvo", "white", 2500, 190);
+const car3 = new Car("Volkswagen", "blue", 1750, 210)
+
+console.log(car1, car2, car3);
+
+console.log(car3.getDescription());
+
+
 // ---------- Arrays ----------
 
 let selectedColors = ["red", "blue"]; // Array de String

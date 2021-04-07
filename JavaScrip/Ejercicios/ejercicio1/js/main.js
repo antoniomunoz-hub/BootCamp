@@ -93,7 +93,72 @@ newButton.addEventListener("click", () => link.target = "_blank");
 
 //9
 
-const ap9Paragraph = document.querySelector("#colorsParrafo");
+const ap9Paragraph = document.querySelector("#colorsParagraph");
 document.querySelector("#colorsSelect").addEventListener("change", e => {
     ap9Paragraph.style.color = e.target.value;
+});
+
+
+//10
+
+const currentRandom = document.getElementById("currentRandom");
+const totalNumbers = document.getElementById("totalNumbers");
+const oddNumbers = document.getElementById("oddNumbers");
+const evenNumbers = document.getElementById("evenNumbers");
+
+document.getElementById("randomButton").onclick = () => {
+    const randomNumber = Math.floor(Math.random() *100);
+    currentRandom.textContent = randomNumber;
+
+    totalNumbers.textContent++; // totalNumbers.textContent = Number(totalNumbers.textContent) + 1;
+    randomNumber % 2 === 0 ? evenNumbers.textContent++ : oddNumbers.textContent++; //esto es igual que un if 
+};
+
+//11
+
+const ul_2 = document.getElementById("ul-2");
+const input_4 = document.getElementById("input-4");
+const button_11 = document.getElementById("button-6");
+
+const myArray = [];
+
+function addNumber() {
+    const num = input_4.value;
+    if (myArray.includes(num)) {
+        alert("error");
+    } else {
+        const li = document.createElement("li");
+        ul_2.prepend(li);
+        li.textContent = num;
+        myArray.push(num);
+    }
+}
+
+button_11.addEventListener("click", addNumber);
+
+//Extra Refactorizar Codigo
+
+const buttons = document.getElementsByClassName('btn-red');
+
+buttons[0].addEventListener('click', () => {
+    buttons[0].style.backgroundColor = "red";
+});
+
+buttons[1].addEventListener('click', () => {
+    buttons[1].style.backgroundColor = "red";
+});
+
+buttons[2].addEventListener('click', () => {
+    buttons[2].style.backgroundColor = "red";
+});
+
+//Solucion 1
+Array.from(buttons).forEach(button => button.onclick = e => e.target.style.backgroundColor = "red");
+
+//Solucion 2 
+buttons = document.querySelectorAll(".btn.red");
+button.forEach(button => {
+    button.addEventListener("click", function (e){
+        e.target.style.backgroundColor = "red";
+    });
 });
