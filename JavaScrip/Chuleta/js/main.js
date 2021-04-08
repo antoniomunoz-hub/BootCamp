@@ -152,51 +152,80 @@ function saludo () {
     // {} Objeto, [] Array tambien es objeto, "" String
     console.log(typeof{}, typeof [], typeof"");
 
+    [13:45] "\"Elvira (Invitado)\""
+    
+    // Object Constructor using functions
+
+
+    function Car(brand, color, weight, topSpeed) {​​​​​​​
+        this.brand = brand;
+        this.color = color;
+        this.weight = weight;
+        this.topSpeed = topSpeed;
+        this.getDescription = function() {​​​​​​​
+            return `This ${​​​​​​​this.color}​​​​​​​ ${​​​​​​​this.brand}​​​​​​​ weigths ${​​​​​​​this.weight}​​​​​​​ ` +
+            `kilos and can reach up to ${​​​​​​​this.topSpeed}​​​​​​​ km/h. `;
+        }​​​​​​​
+    }​​​​​​​
+
+
+    const car1 = new Car("Mercedes", "red", 2000, 200);
+    const car2 = new Car("Volvo", "white", 2500, 180);
+    const car3 = new Car("Volkswagen", "blue", 1500, 175);
+
+
+    console.log(car1, car2, car3);
+
+
+    console.log(car2.weight);
+
+
+    console.log(car3.getDescription());
     
 
 // ----------This-----------
 
-const person2= {
-    
-    name: "Thom",
-    talk() {
-        console.log(`Me llamo ${this.name}`);
+    const person2= {
+        
+        name: "Thom",
+        talk() {
+            console.log(`Me llamo ${this.name}`);
+        }
     }
-}
 
-const person3= {
-    name: "Sarah",
-    talk() {
-        console.log(this);
-        console.log(`Me llamo ${this.name}`);
+    const person3= {
+        name: "Sarah",
+        talk() {
+            console.log(this);
+            console.log(`Me llamo ${this.name}`);
+        }
     }
-}
 
-person2.talk();
-person3.talk();
+    person2.talk();
+    person3.talk();
 
-console.clear();
+    console.clear();
 
-//Object Constructor using functions
+    //Object Constructor using functions
 
-function Car(brand, color, weight,topSpeed){
-    this.brand = brand;
-    this.color = color;
-    this.weight = weight;
-    this.topSpeed = topSpeed;
-    this.getDescription = function(){
-        return `This ${this.color} ${this.brand} weights ${this.weight}`+
-        `kilos and can reach up to ${this.topSpeed} km/h`
+    function Car(brand, color, weight,topSpeed){
+        this.brand = brand;
+        this.color = color;
+        this.weight = weight;
+        this.topSpeed = topSpeed;
+        this.getDescription = function(){
+            return `This ${this.color} ${this.brand} weights ${this.weight}`+
+            `kilos and can reach up to ${this.topSpeed} km/h`
+        }
     }
-}
 
-const car1 = new Car("Mercedes", "red", 2000, 260);
-const car2 = new Car("Volvo", "white", 2500, 190);
-const car3 = new Car("Volkswagen", "blue", 1750, 210)
+    const car1 = new Car("Mercedes", "red", 2000, 260);
+    const car2 = new Car("Volvo", "white", 2500, 190);
+    const car3 = new Car("Volkswagen", "blue", 1750, 210)
 
-console.log(car1, car2, car3);
+    console.log(car1, car2, car3);
 
-console.log(car3.getDescription());
+    console.log(car3.getDescription());
 
 
 // ---------- Arrays ----------
@@ -346,6 +375,83 @@ function orderNumbers(a, b) {
         return 1;
     }
 }
+
+
+//Funciones Alto Nivel
+
+//Map
+
+let arr1 = [1, 2, 3];
+let arr2 = [];
+
+arr2 = arr1.map(num => num * 2)
+
+// for (let num of arr1) {
+//     arr2.push(num * 2);
+// }
+
+console.log(arr1, arr2);
+// a partir de un array con años de nacimiento, calcular edades
+
+const birthYears = [1980, 1990, 1975, 1970];
+let ages = [];
+
+ages = birthYears.map( year => 2021 - year );
+
+console.log(ages);
+
+//Filter
+
+//forma manual
+
+const prices = [150, 50, 49, 51, 15, 237];
+const expensives = [];
+
+for (let price of prices ){
+    if (price > 50){
+        return expensives.push(price)
+    }
+} 
+
+console.log(expensives);
+
+//con funcion filter
+
+const prices = [150, 50, 49, 51, 15, 237];
+let expensives = [];
+
+expensives = prices.filter(price => price >= 50);
+
+console.log(prices, expensives);
+
+const cars = [
+    {
+        brand: "BMW",
+        year: 2018,
+        plateNumber: "  LMN4578"
+    },
+    {
+        brand: "BMW",
+        year: 1990,
+        plateNumber: "  CDW4578"
+    },
+    {
+        brand: "SEAT",
+        year: 2006,
+        plateNumber: "  DMN4578"
+    },
+];
+
+console.log(cars.filter(car => car.year > 2008));
+console.log(cars.map(car => car.brand)); // crea nuevo array con las marcas de los coches 
+//recorriendo de elemento a elemento
+
+//Sort
+
+cars.sort((car1, car2) => car1.year - car2.year);
+
+console.log(cars);
+
 
 // numbersArray.sort(orderNumbers);
 numbersArray.sort(function (a, b){ return a - b});
