@@ -452,6 +452,12 @@ cars.sort((car1, car2) => car1.year - car2.year);
 
 console.log(cars);
 
+//Reduce
+
+const arr = [10, 7, 13, 20];
+
+console.log(arr.reduce((sum, currentNumber) => sum + currentNumber, 0));
+
 
 // numbersArray.sort(orderNumbers);
 numbersArray.sort(function (a, b){ return a - b});
