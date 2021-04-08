@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio1</title>
 
+    <style>
+        .btn{
+            background-color:brown;
+        }
+    </style>
+
 </head>
 <body>
     <h1>Ejercicio 1</h1>
@@ -43,7 +49,6 @@
 
     <textarea name="" id="textareatovalidate" cols="30" rows="10"></textarea>
     
-
     <h2>Apartado 6</h2>
     
     <label for="evenNumberInput">Introduce un numero par</label>
@@ -72,28 +77,30 @@
 
     <h2>Apartado 10</h2>
     
+    <p>Aleatorio: <span id="currentRandom" ></span></p>
+    <p>Numeros Totales: <span id="totalNumbers">0</span></p>
+    <p>Impares: <span id="oddNumbers"></span></p>
+    <p>Pares: <span id="evenNumbers"></span></p>
     
-    <p>Aleatorio: <span id="currentRandom"></span></p>
-    <p>Numeros Totales:<span id="totalNumbers">0</span></p>
-    <p>Impares:<span id="oddNumbers"></span></p>
-    <p>Pares:<span id="evenNumbers"></span></p>
+    <button id="randomButton">Pulsa Para Nuevo Numero</button>
+
+    <h2>Apartado 11</h2> 
     
-    <button id="randomButton" >Numero Aleatorio</button>
+     <ul id="ulAptll"></ul>
+     <input type="text" name="" id="inputAptll" placeholder="Introduce un Numero">
+     <button id="buttonAptll">Añadir a la lista</button>
 
-    <h2>Apartado 11</h2>
 
-    <ul id="ul-2"></ul>
-    <input type="text" id="input-4">
-    <button id="button-6">Botón 6</button>
+    <h2>Apartado 12</h2>
 
-    <h2>Extra: Refactorizar Codigo</h2>
-    <div class="buttons">
-        <button class="btn">Boton 1</button>
-        <button class="btn">Boton 2</button>
-        <button class="btn">Boton 3</button>
-    </div>
+    <button id="toggler">Toggle class .btn</button>
 
-    <script src="js/main.js"> </script>
+
+
+
+
+
+ <script src="js/main.js"> </script>
 </body>
 
 </html>

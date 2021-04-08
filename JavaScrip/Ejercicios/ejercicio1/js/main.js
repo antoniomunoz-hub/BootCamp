@@ -86,15 +86,15 @@ for ( let i = 1; i <= 10; i++ ) {
 
 //8
 
-const newTabButton = document.querySelector("#newTab");
-const link = document.querySelector("a");
-newButton.addEventListener("click", () => link.target = "_blank");
+// const newTabButton = document.querySelector("#newTab");
+// const link = document.querySelector("a");
+// newButton.addEventListener("click", () => link.target = "_blank");
 
 
 //9
 
-const ap9Paragraph = document.querySelector("#colorsParagraph");
-document.querySelector("#colorsSelect").addEventListener("change", e => {
+const ap9Paragraph = document.getElementById("colorsParrafo");
+document.getElementById("colorsSelect").addEventListener("change", e => {
     ap9Paragraph.style.color = e.target.value;
 });
 
@@ -107,58 +107,45 @@ const oddNumbers = document.getElementById("oddNumbers");
 const evenNumbers = document.getElementById("evenNumbers");
 
 document.getElementById("randomButton").onclick = () => {
-    const randomNumber = Math.floor(Math.random() *100);
+    const randomNumber = Math.floor(Math.random()*100);
     currentRandom.textContent = randomNumber;
 
-    totalNumbers.textContent++; // totalNumbers.textContent = Number(totalNumbers.textContent) + 1;
-    randomNumber % 2 === 0 ? evenNumbers.textContent++ : oddNumbers.textContent++; //esto es igual que un if 
-};
+    totalNumbers.textContent++
+    
+    randomNumber % 2 === 0 ? evenNumbers.textContent++ : oddNumbers.textContent++;
+}; 
 
-//11
+//11 
 
-const ul_2 = document.getElementById("ul-2");
-const input_4 = document.getElementById("input-4");
-const button_11 = document.getElementById("button-6");
+const ulAptll = document.getElementById("ulAptll");
+const inputAptll = document.getElementById("inputAptll");
+const buttonAptll = document.getElementById("buttonAptll");
+let numberList = [13, 27, 54, 86];
 
-const myArray = [];
+// function fillList () {
+//     // VACIA LA LISTA Y LA RELLENA DE NUEVO ELEMENTO A ELEMENTO
+//     ulAptll.innerHTML = "";
+//     for (let number of numberList) {
+//         newLi = document.createElementNS('li');
+//         newLi.textContent = number;
+//         ulAptll.appendChild(newLi);
+//     }
+// }
 
-function addNumber() {
-    const num = input_4.value;
-    if (myArray.includes(num)) {
-        alert("error");
-    } else {
-        const li = document.createElement("li");
-        ul_2.prepend(li);
-        li.textContent = num;
-        myArray.push(num);
-    }
-}
+// function addToList () {
+//     // PARSEA EL INPUT COMPRUEBA SI EXISTE Y LO AÑADE
+//     let numberToJoin = Number (inputAptll.value);
+//     if(numberList.indexOf(numberToJoin) === -1) {
+//         numberList.push(numberToJoin);
+//         fillList();
+//     } else {
+//         window.alert (`Este numero ya esta en la lista`);
+//     }
+// }
 
-button_11.addEventListener("click", addNumber);
+// fillList();
+// buttonAptll.addEventListener(`click`, addToList);
 
-//Extra Refactorizar Codigo
+//12
 
-const buttons = document.getElementsByClassName('btn-red');
-
-buttons[0].addEventListener('click', () => {
-    buttons[0].style.backgroundColor = "red";
-});
-
-buttons[1].addEventListener('click', () => {
-    buttons[1].style.backgroundColor = "red";
-});
-
-buttons[2].addEventListener('click', () => {
-    buttons[2].style.backgroundColor = "red";
-});
-
-//Solucion 1
-Array.from(buttons).forEach(button => button.onclick = e => e.target.style.backgroundColor = "red");
-
-//Solucion 2 
-buttons = document.querySelectorAll(".btn.red");
-button.forEach(button => {
-    button.addEventListener("click", function (e){
-        e.target.style.backgroundColor = "red";
-    });
-});
+document.querySelector("#toggler").onclick = (e) => e.target.classList.toggle("btn");
