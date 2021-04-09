@@ -152,6 +152,13 @@ function saludo () {
     // {} Objeto, [] Array tambien es objeto, "" String
     console.log(typeof{}, typeof [], typeof"");
 
+    //Como copiar en objetos
+    
+    let obj1 = {property: 5};
+    let obj2 = obj1; // no es una copia. es el mismo con dos nombres
+
+    obj2 = {...obj1} // copia superficial que usaremos practicamente siempre
+    obj2 = JSON.parse(JSON.stringify(obj1)); // copia profunda o total
     
     // Object Constructor using functions
 
