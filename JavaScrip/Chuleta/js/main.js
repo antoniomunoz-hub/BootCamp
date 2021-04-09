@@ -152,7 +152,6 @@ function saludo () {
     // {} Objeto, [] Array tambien es objeto, "" String
     console.log(typeof{}, typeof [], typeof"");
 
-    [13:45] "\"Elvira (Invitado)\""
     
     // Object Constructor using functions
 
