@@ -75,7 +75,6 @@ function porcessProducts (e){
 }
 
 //Añadir listeners
-
 select.addEventListener("change", e => {
     console.log(users.find(user => user.nombre === select.value));
 
