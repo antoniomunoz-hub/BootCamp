@@ -23,13 +23,11 @@ colorButton.addEventListener("click", function() {
 
 //3
 
-// const list = document.querySelector("ul");
-// const image = document.querySelector("img");
-// const changeImage = e => image.src = e.target.textContent;
+const list = document.querySelector("ul");
+const image = document.querySelector("img");
+const changeImage = e => image.src = e.target.textContent;
 
-// listItems[0].addEventListener("click", changeImage);
-// listItems[1].addEventListener("click", changeImage);
-// listItems[2].addEventListener("click", changeImage);
+list.addEventListener("click", changeImage);
 
 //4
 
@@ -54,7 +52,7 @@ ap42Input.addEventListener("keyup", () => ap42Parrafo.textContent = ap42Input.va
 
 const textArea = document.querySelector("#textareatovalidate");
 textArea.addEventListener("input", e => {
-    e.target.style.color = e.target.value.length > 15 ? "red" : "green";
+    textArea.style.color = textArea.value.length > 15 ? "red" : "green";
     // if (e.target.value.length > 15) {
     //     e.target.style.color = "red";
     // } else {
@@ -63,9 +61,10 @@ textArea.addEventListener("input", e => {
 });
 
 //6
-
+const evenButton = document.getElementById("evenButton")
 const evenInput = document.querySelector("#evenNumberInput");
-evenInput.nextElementSibling.addEventListener("click", () => {
+
+evenButton.addEventListener("click", () => {
     if (evenInput.value % 2 !== 0) {
         evenInput.style.border = "2px solid red";
     } else {
@@ -82,18 +81,18 @@ for ( let i = 1; i <= 10; i++ ) {
     const newLi = document.createElement("li");
     newLi.textContent = `Elemento ${i}`;
     ul.appendChild(newLi);
-}
+};
 
 //8
 
-// const newTabButton = document.querySelector("#newTab");
-// const link = document.querySelector("a");
-// newButton.addEventListener("click", () => link.target = "_blank");
+const newTabButton = document.getElementById("newTab");
+const link = document.querySelector("a");
+newTabButton.addEventListener("click", () => link.target = "_blank");
 
 
 //9
 
-const ap9Paragraph = document.getElementById("colorsParrafo");
+const ap9Paragraph = document.getElementById("colorsParagraph");
 document.getElementById("colorsSelect").addEventListener("change", e => {
     ap9Paragraph.style.color = e.target.value;
 });
@@ -122,29 +121,32 @@ const inputAptll = document.getElementById("inputAptll");
 const buttonAptll = document.getElementById("buttonAptll");
 let numberList = [13, 27, 54, 86];
 
-// function fillList () {
-//     // VACIA LA LISTA Y LA RELLENA DE NUEVO ELEMENTO A ELEMENTO
-//     ulAptll.innerHTML = "";
-//     for (let number of numberList) {
-//         newLi = document.createElementNS('li');
-//         newLi.textContent = number;
-//         ulAptll.appendChild(newLi);
-//     }
-// }
 
-// function addToList () {
-//     // PARSEA EL INPUT COMPRUEBA SI EXISTE Y LO AÑADE
-//     let numberToJoin = Number (inputAptll.value);
-//     if(numberList.indexOf(numberToJoin) === -1) {
-//         numberList.push(numberToJoin);
-//         fillList();
-//     } else {
-//         window.alert (`Este numero ya esta en la lista`);
-//     }
-// }
+function fillList () {
+    // VACIA LA LISTA Y LA RELLENA DE NUEVO ELEMENTO A ELEMENTO
+    ulAptll.innerHTML = "";
+    for (let number of numberList) {
+        newLi = document.createElement('li');
+        newLi.textContent = number;
+        ulAptll.appendChild(newLi);
+    }
+}
 
-// fillList();
-// buttonAptll.addEventListener(`click`, addToList);
+console.log(fillList());
+
+function addToList () {
+    // PARSEA EL INPUT COMPRUEBA SI EXISTE Y LO AÑADE
+    let numberToJoin = Number (inputAptll.value);
+    if(numberList.indexOf(numberToJoin) === -1) {
+        numberList.push(numberToJoin);
+        fillList();
+    } else {
+        window.alert ("Este numero ya esta en la lista");
+    }
+}
+
+fillList();
+buttonAptll.addEventListener("click", addToList);
 
 //12
 
