@@ -9,16 +9,49 @@
 </head>
 <body>
    
-    <h1>Books</h1>
-    <table class= "table" id="tableBooks">
-        <th class= "thead-dark"></th>
-    </table>
+    
+   <div class="container">
+    <h1 class="my-4" >Books</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Sales</th>
+            <th scope="col">Price</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody id="books-body">
+      </table>
+
+      <form>
+        <div class="form-group">
+          <label for="tittleInput">Tittle</label>
+          <input type="text" class="form-control" id="tittleInput" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="authorInput">Author</label>
+          <input type="text" class="form-control" id="authorInput">
+        </div>
+        <div class="form-group">
+            <label for="salesInput">Sales</label>
+            <input type="number" class="form-control" id="salesInput">
+        </div>
+        <div class="form-group">
+            <label for="priceInput">Price</label>
+            <input type="number" class="form-control" id="priceInput">
+        </div>    
+        <button type="submit" class="btn btn-primary">Submit</button
+    </div>
 
 
+
     
     
     
-    <h1>Add a New Book</h1>
+    <!-- <h1>Add a New Book</h1>
 
     <div id="formuBooks"></div>
     <p>Title</p>
@@ -28,7 +61,7 @@
     <label for="salesBook">Sales</label>
     <input type="text" placeholder="Enter Sales" id="salesBook">
     <label for="priceBook">Price</label>
-    <input type="text" placeholder="Enter Price" id="priceBook">
+    <input type="text" placeholder="Enter Price" id="priceBook"> -->
 
     <script src="js/main.js"></script>
 </body>
