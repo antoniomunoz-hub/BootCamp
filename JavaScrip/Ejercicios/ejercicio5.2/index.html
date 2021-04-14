@@ -17,6 +17,8 @@
 
         <h1 class="my-4">Books</h1>
 
+        <input type="text" name="" id="filterInput" class="form-control mb-4" placeholder="Buscar">
+
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -24,12 +26,13 @@
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Sales</th>
-                    <th scope="col">Price</th>
+                    <th scope="col" id="priceHeader">Price <span></span></th>
                     <th scope="col">Remove</th>
                 </tr>
             </thead>
             <tbody id="books-body">
             </tbody>
+            <tfoot></tfoot>
         </table>
 
         <h2>Add a new book</h2>

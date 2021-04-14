@@ -1,59 +1,115 @@
-//Constructor
-
-function Book(ID, tittle, author, sales, price){
-    this.ID = ID;
-    this.tittle = tittle;
+// Book Constructor
+function Book(id, title, author, sales, price) {
+    this.id = id;
+    this.title = title;
     this.author = author;
     this.sales = sales;
     this.price = price;
 }
 
-//Data
-
-const books = [
-    new Book(1,"Soy Programador", "J.A", 4132, 59.90),
-    new Book(2, "Java Scrip", "Stephen King", 1500, 100),
-    new Book(3, "Haz un Bootcamp", "Edgar Allan Pae", 2490, 80),
-    new Book(4, "Ambiciones Reflexsiones", "Belen Esteban", 10, 0.45),
-    new Book(5, "El Poder Del Ahora", "Eckahart Toll", 1290, 32),
-    new Book(6, "Tus Zonas Erroneas", "Wayne Dyed", 3213, 20),
-    new Book(6, "El Arte De No Amargarse", "Rafael Saint", 2340, 30),
-    new Book(7, "Adios", "Manuel Macias", 3215, 12.90),
-    new Book(8, "No Sufras", "Faustino Ortega", 17, 9.90),
-    new Book(9, "La Soga", "Antonio Muñoz", 6435, 24.99),
-    new Book(10, "Usar la Soga", "Manuel Gomez", 1212, 26.90),
+// Data initialization
+let books = [
+    new Book(1, "The Selfish Gene", "Richard Dawkins", 740120, 12),
+    new Book(2, "The God Delusion", "Richard Dawkins", 610120, 15),
+    new Book(3, "La nueva mente del emperador", "Roger Penrose", 120000, 17),
+    new Book(4, "Sapiens: A Brief History of Humankind", " Yuval Noah Harari", 910120, 16),
+    new Book(5, "The Selfish Gene", "Richard Dawkins", 740120, 12),
+    new Book(6, "The God Delusion", "Richard Dawkins", 610120, 15),
+    new Book(7, "La nueva mente del emperador", "Roger Penrose", 120000, 17),
+    new Book(8, "Sapiens: A Brief History of Humankind", " Yuval Noah Harari", 910120, 16),
+    new Book(9, "The Selfish Gene", "Richard Dawkins", 740120, 12),
+    new Book(10, "The God Delusion", "Richard Dawkins", 610120, 15),
 ];
 
-//Selectores
-
+// Selectors
 const booksTbody = document.getElementById("books-body");
 
+const titleInput = document.getElementById("titleInput");
+const authorInput = document.getElementById("authorInput");
+const salesInput = document.getElementById("salesInput");
+const priceInput = document.getElementById("priceInput");
+const addBookButton = document.getElementById("addBookButton");
 
-function updateTable(){
-    //Vaciamos tbody por completo
-    booksTbody.innerHTML = ""; 
+function updateTable() {
+    // Vaciamos el tbody por completo
+    booksTbody.innerHTML = "";
     
-    //Generamos de nuevo todas las filas
+    // Generamos de nuevo todas las filas
     books.forEach(book => {
-        booksTbody.innerHTML += 
-        `<tr>
-            <td>${book.id}</td>
-            <td>${book.tittle}</td>
-            <td>${book.author}</td>
-            <td>${book.sales}</td>
-            <td>${book.price}</td>
-            <td id="${book.id}"</td>
-        </tr>`
-        const remveTd = document.getElementById(book.id);
-        const newButton = document.createElement("button");
-        newButton.className = "btn btn-danger";
+        booksTbody.innerHTML += `
+            <tr>
+                <td>${book.id}</td>
+                <td>${book.title}</td>
+                <td>${book.author}</td>
+                <td>${book.sales}</td>
+                <td>${book.price}</td>
+                <td>
+                    <button class="btn btn-danger" id="${book.id}">Remove</button>
+                </td>
+            </tr>`;
     });
+}
+
+booksTbody.onclick = e => {
+    if(e.target.tagName === "BUTTON") {
+        books = books.filter(book => book.id != e.target.id);
+        updateTable();
+    }
 };
 
 updateTable();
 
-// books.forEach(book =>{
-//     const newBook = document.createElement("tr");
-//     newBook.textContent = "";
-//     select.append(newBook);
-// });
+function updateTableV2() {
+    // Vaciamos el tbody por completo
+    booksTbody.innerHTML = "";
+    
+    // Generamos de nuevo todas las filas
+    books.forEach(book => {
+        const newTr = document.createElement("tr");
+
+        for (let property in book) {
+            const newTd = document.createElement("td");
+            newTd.textContent = book[property];
+            newTr.appendChild(newTd);
+        }
+        
+        const newRemoveButton = document.createElement("button");
+        newRemoveButton.classList.add("btn", "btn-danger");
+        newRemoveButton.id = book.id;
+        newRemoveButton.textContent = "Remove";
+        newRemoveButton.addEventListener("click", e => {
+            books = books.filter(book => book.id != e.target.id);
+            updateTable();
+        });
+        
+        newTr.appendChild(newRemoveButton);
+
+        booksTbody.appendChild(newTr);
+    });
+}
+
+// updateTableV2();
+
+// Process form and add a new book
+addBookButton.addEventListener("click", e => {
+    e.preventDefault();
+    
+    const newID = books[books.length-1].id + 1;
+
+    books.push(new Book(
+            newID,
+            titleInput.value,
+            authorInput.value,
+            salesInput.value,
+            priceInput.value)
+    );
+
+    updateTable();
+
+    // titleInput.value = "";
+    // authorInput.value = "";
+    // salesInput.value = "";
+    // priceInput.value = "";
+
+    addBookButton.parentNode.reset();
+});
