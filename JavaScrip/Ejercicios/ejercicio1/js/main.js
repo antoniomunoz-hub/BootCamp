@@ -151,3 +151,22 @@ buttonAptll.addEventListener("click", addToList);
 //12
 
 document.querySelector("#toggler").onclick = (e) => e.target.classList.toggle("btn");
+
+//13 
+
+const buttons = document.getElementsByClassName(`btn`);
+const button1 = document.getElementById ("button1");
+const button2 = document.getElementById ("button2");
+const button3 = document.getElementById ("button3");
+
+button1.addEventListener(`click`, () => {
+    button1.style.backgroundColor = "red";
+});
+
+button2.addEventListener(`click`, () => {
+    button2.style.backgroundColor = "red";
+});
+
+button3.addEventListener(`click`, () => {
+    button3.style.backgroundColor = "red";
+});
