@@ -60,6 +60,8 @@ fetch(URLPost)
     .then(data => {
         // Aqui proceso los datos
         tittleBody(data)
+        fillDiv()
+        posts = [...data];
     }).catch(error => {
         console.log(error);
 });
@@ -67,26 +69,61 @@ fetch(URLPost)
 
 //Paginado
 
-const paginador = document.getElementById("paginator");
+//Constantes
 
-function paginator(items, current_page, per_page_items) {
-    let page = current_page || 1,
-    per_page = per_page_items || 20,
-    offset = (page - 1) * per_page,
+const pageSize = 20;
 
-    paginatedItems = items.slice(offset).slice(0, per_page_items),
-    total_pages = Math.ceil(items.length / per_page);
+//Variables 
+let posts = [];
+let currentPage = 1;
 
-    return {
-        page: page,
-        per_page: per_page,
-        pre_page: page - 1 ? page - 1 : null,
-        next_page: (total_pages > page) ? page + 1 : null,
-        total: items.length,
-        total_pages: total_pages,
-        data: paginatedItems
-    };
+//Selectores
+
+const postDiv = document.getElementById("posts");
+document.querySelectorAll("#previusPage").forEach(button => button.addEventListener("click",changePAge));
+document.querySelectorAll("#nextPage").forEach(button => button.addEventListener("click",changePAge));
+
+//Utilidades
+
+function fillDiv(posts) {
+    const newPagePosts = paginate(posts, pageSIze, currentPage );
+    console.log(newPagePosts);
+    postDiv.innerHTML = "";
+    posts.forEach(post => postDiv.innerHTML += `<h3>${post.id} ${post.tittle}</h3><p>${post.body}</p>`);
 }
 
+function changePAge(event) { 
+    if (event.target.className === "previusPage" && currentPage > 1) {
+        currentPage --;
+    } else if (event.targetClassName === "nextPage" && currentPage < post.lenght / pageSize){
+        currentPage++;
+    };
+    fillDiv();
+}
+//en esta url esta la funcion para paginar 
+//https://stackoverflow.com/questions/42761068/paginate-javascript-array
+function paginate(array, page_size, page_number) {
+    return array.slice((page_number - 1) * page_size, page_number * page_size);
+}
 
+// const paginador = document.getElementById("paginator");
+
+// function paginator(items, current_page, per_page_items) {
+//     let page = current_page || 1,
+//     per_page = per_page_items || 20,
+//     offset = (page - 1) * per_page,
+
+//     paginatedItems = items.slice(offset).slice(0, per_page_items),
+//     total_pages = Math.ceil(items.length / per_page);
+
+//     return {
+//         page: page,
+//         per_page: per_page,
+//         pre_page: page - 1 ? page - 1 : null,
+//         next_page: (total_pages > page) ? page + 1 : null,
+//         total: items.length,
+//         total_pages: total_pages,
+//         data: paginatedItems
+//     };
+// };
 
