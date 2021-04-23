@@ -50,13 +50,13 @@ export default function Formulario({setContacts}) {
 
     function submit (e){
         e.preventDefault();
-        const newContact ={name, lastname, address, city, postalCode, phone};
-            // name: name,
-            // lastname: lastName,
-            // address: address,
-            // city: city,
-            // postalCode: postalCode,    
-            // phone: phone,
+        const newContact ={ // {name, lastname, address, city, postalCode, phone};
+            name: form.name,
+            lastname: form.lastName,
+            address: form.address,
+            city: form.city,
+            postalCode: form.postalCode,    
+            phone: form.phone,
         }
 
 
