@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function Formulario() {
+export default function Formulario({setContacts}) {
     // const [name,setName] = useState ("");
     // const [lastName,setLastName] = useState ("");
     // const [address,setAddress] = useState ("");
@@ -41,32 +41,40 @@ export default function Formulario() {
 
     const [form, setForm] = useState(initialState)
 
-    
+    function handleInput(e){
+        const inputName= e.target.id;
+        const newValue= e.target.value;
+        setForm({...form, ...{[inputName]:e.target.value}})
+
+    }
 
     function submit (e){
         e.preventDefault();
-        const newContact ={name, lastname, address, city, postalCode, phone
+        const newContact ={name, lastname, address, city, postalCode, phone};
             // name: name,
             // lastname: lastName,
             // address: address,
             // city: city,
             // postalCode: postalCode,    
             // phone: phone,
-        };
+        }
+
 
         setContacts(currentContacts => [...currentContacts, newContact]);
         
         e.target.reset(); //Accede a todos los estados y los vacia visualmente si no cambias el valor se queda el mismo estado guardado
     };
+
     return (
-       <form className="form-group" onSubmit={submit}>
-           <input className="form-control mb-3" type="text" onChange={handleName} placeholder="Introduce el nombre"/>
-           <input className="form-control mb-3" type="text" onChange={handleLastName} placeholder="Introduce apellidos"/>
-           <input className="form-control mb-3" type="text" onChange={handleAddress} placeholder="Introduce direccion"/>
-           <input className="form-control mb-3" type="text" onChange={handleCity} placeholder="Introduce ciudad"/>
-           <input className="form-control mb-3" type="text" onChange={handlePostalCode} placeholder="Introduce codigo postal"/>
-           <input className="form-control mb-3" type="text" onChange={handlePhone} placeholder="Introduce numero telefono"/>
+       <form className="form-group mb-3 col-12 col-sm-6 col-xl-3" onSubmit={submit}>
+           <input className="form-control mb-3" type="text" name="" value={form.name} onChange={handleInput} placeholder="Introduce el nombre"/>
+           <input className="form-control mb-3" type="text" name="" value={form.lastName} onChange={handleInput} placeholder="Introduce apellidos"/>
+           <input className="form-control mb-3" type="text" name="" value={form.address} onChange={handleInput} placeholder="Introduce direccion"/>
+           <input className="form-control mb-3" type="text" name="" value={form.city} onChange={handleInput} placeholder="Introduce ciudad"/>
+           <input className="form-control mb-3" type="text" name="" value={form.postalCode} onChange={handleInput} placeholder="Introduce codigo postal"/>
+           <input className="form-control mb-3" type="text" name="" value={form.phone} onChange={handleInput} placeholder="Introduce numero telefono"/>
            <input type="submit" className="btn btn-succes" value="Registar"/>
         </form>
     )
-}
+    
+
