@@ -4,6 +4,7 @@ import FirstComponet, {SecondComponent, ThirdComponent} from './componets/FirstC
 import Counter from "./componets/Counter";
 import UseEffectComponent from "./componets/UseEffectComponent";
 import { useState, createContext } from 'react';
+import Router from './Router';
 import UseContextComponetn from './componets/UseContextComponetn';
 //Si tenemos otro componente en otro archivo necesitamos crear otra linea con la ruta del archivo
 
@@ -23,10 +24,10 @@ function App() {
     //   <ThirdComponent/>
     //   <Counter/>
     //   <UseEffectComponent/> */}
-    <GlobalContext.Provider value="Soy un String guardado en un contexto">
+    {/* <GlobalContext.Provider value="Soy un String guardado en un contexto">
       <UseContextComponetn/>
-    </GlobalContext.Provider>
-    
+    </GlobalContext.Provider> */}
+    <Router/>
     </div>
   );
 }
