@@ -1,21 +1,24 @@
+import {useState, useEffect} from "react";
 import './App.css';
-import ToolList from './components/ToolList';
-import AddTool from './components/AddTool';
+import TodoList from './components/TodoList';
+import NewTodo from './components/NewTodo';
 
 function App() {
+  const [todos, setTodos] = useState([]);
 
-  const initialTool=[
-    {userId:1, tittle:"Haz la cama", completed:"Yes"},
-    {userId:2, tittle:"Recoje la cocina", completed:"Yes"},
-    {userId:3, tittle:"Duchate", completed:"Yes"}
-  ]
+  const API_TODOS = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json";
 
-  const [tools, setTools] = useState(initialContacsState);
+  useEffect(() => {
+   fetch(API_TODOS)
+    .then(responsive => responsive.json())
+    .then(data => setTodos(data.slice(0, 20)));
+  }, [])
 
   return (
     <div className="App">
-      <AddTool/>
-      <ToolList tools={tools}/>
+      <h1>Todo List</h1>
+     <TodoList todos={todos} setTodos={setTodos}/>
+     <NewTodo/>
     </div>
   );
 }
