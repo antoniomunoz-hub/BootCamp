@@ -1,23 +1,26 @@
 import {useState} from "react";
 
-export default function NewTodo({setTodosa}) {
+export default function NewTodo({setTodos}) {
+
     const [newTodo, setNewTodo] = useState("");
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault();
 
-        setTodosa(currentTodos=> [{title: newTodo}, ...currentTodos]);
+        setTodos(currentTodos => [{title: newTodo, completed: false}, ...currentTodos]);
 
         setNewTodo("");
+        
     }
-    return (
-        <form onSubmit={handleSubmit} className="my-4 mx-4">
-            <input type="text" 
-            placeholder="Introduce un nuevo To-Do"
-            className="form-control" 
-            onChange={e => setNewTodo(e.target.value)}
-            value={newTodo}
-            />
-        </form>
+
+    return (       
+       <form onSubmit={handleSubmit} className="my-4 mx-4">
+           <input type="text"
+                placeholder="Introduce un nuevo to-do"
+                className="form-control"
+                onChange={e => setNewTodo(e.target.value)}
+                value={newTodo}
+           />
+       </form>
     )
 }

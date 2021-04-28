@@ -54,7 +54,8 @@ return (
         <button type="submit" className="mb-3 btn bg-success" value="register">Register</button>
     </form>
 )
-}
+
+
 
 //hacemos onChange y me metemos el nombre de cada función con las que vamos a hacer el evento
 //hacemos onSubmit y metemos el nombre de la función con las que queremos hacer el evento
