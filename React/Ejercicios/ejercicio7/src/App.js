@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import LastsMovies from "./Pages/LastsMovies";
+import Details from"./Pages/Details";
 
 export default function App() {
 
@@ -19,7 +20,6 @@ export default function App() {
           <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link> <Link to="/last-movies">Last Movies</Link></Nav.Link>
-          <Nav.Link> <Link to="/users">Users</Link></Nav.Link>
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -33,8 +33,8 @@ export default function App() {
           <Route path="/last-movies">
             <LastsMovies/>
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/details/:id">
+            <Details/>
           </Route>
           <Route path="/">
             <Home />
