@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import {Card, Button, CardGroup, Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
+
 export default function LastsMovies() {
     
     const[movies, setMovies] = useState([]);
@@ -30,8 +31,6 @@ export default function LastsMovies() {
             </Card>
             </CardGroup>
             ))}
-
-            
         </Container >
     )
 }

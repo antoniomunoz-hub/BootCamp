@@ -16,7 +16,14 @@ export default function Details() {
     }, [])
     return (
         <div>
-            {movie.overview}
+            <h2>{movie.original_title}</h2>
+            <img src={"https://image.tmdb.org/t/p/w500/"+ movie.backdrop_path} alt=""/>
+            <p>{movie.overview}</p>
+            <p>Fecha de Lanzamiento : {movie.release_date}</p>
+            <p>Nota Media: {movie.vote_average}</p>
+            <p>Votos Totales: {movie.vote_count}</p>
+
+
         </div>
     )
 }
