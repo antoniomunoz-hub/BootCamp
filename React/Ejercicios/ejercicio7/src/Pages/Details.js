@@ -17,7 +17,7 @@ export default function Details() {
     return (
         <div>
             <h2>{movie.original_title}</h2>
-            <img src={"https://image.tmdb.org/t/p/w500/"+ movie.backdrop_path} alt=""/>
+            <img src={"https://image.tmdb.org/t/p/w500/"+ movie.poster_path} alt=""/>
             <p>{movie.overview}</p>
             <p>Fecha de Lanzamiento : {movie.release_date}</p>
             <p>Nota Media: {movie.vote_average}</p>
