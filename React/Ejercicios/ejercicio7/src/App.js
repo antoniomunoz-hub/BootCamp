@@ -7,10 +7,23 @@ import {
   Link
 } from "react-router-dom";
 import LastsMovies from "./Pages/LastsMovies";
-import Details from"./Pages/Details";
+import Details from"./Pages/Details"; 
+import Home from "./Pages/Home";
 
 export default function App() {
+  const handleChange =(e)=>setMovie(e.target.value);
+  const[movie, setMovie] = useState("");
+  const[movies, setMovies] = useState([]);
+  const search = (e)=> {
+    console.log("paso por aqui");
+    e.preventDefault();
 
+    fetch('https://api.themoviedb.org/3/search/movie?api_key=64630dedf75d27e2299520a51e45e9b1b&query=' + movie)
+      .then(response => response.json())
+      .then(data => (setMovies(data.results)));
+
+  }
+    
   return (
     <Router>
       <div>
@@ -22,8 +35,8 @@ export default function App() {
           <Nav.Link> <Link to="/last-movies">Last Movies</Link></Nav.Link>
     </Nav>
     <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleChange} />
+      <Button type="button" onClick={(e)=>search(e)} variant="outline-success">Search</Button>
     </Form>
   </Navbar.Collapse>
 </Navbar>
@@ -37,7 +50,7 @@ export default function App() {
             <Details/>
           </Route>
           <Route path="/">
-            <Home />
+            <Home movies={movies} />
           </Route>
         </Switch>
       </div>
@@ -45,9 +58,6 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
 function About() {
   return <h2>About</h2>;

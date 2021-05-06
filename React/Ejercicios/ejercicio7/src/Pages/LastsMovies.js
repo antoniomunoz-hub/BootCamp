@@ -3,6 +3,8 @@ import {Card, Button, CardGroup, Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 
+
+
 export default function LastsMovies() {
     
     const[movies, setMovies] = useState([]);
@@ -16,10 +18,11 @@ export default function LastsMovies() {
     }, [])
 
     return (
+        <div className="last">
         <Container>
-            {movies.map((movie, index)=>(
+            {movies.map((movie, index)=>(   
             <CardGroup key={index}>
-                <Card style={{ width: '1rem' }}>
+                <Card  style={{ width: '1rem' }}>
                 <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/"+ movie.backdrop_path}/>
                 <Card.Body>
                 <Card.Title>{movie.original_title}</Card.Title>
@@ -31,6 +34,8 @@ export default function LastsMovies() {
             </Card>
             </CardGroup>
             ))}
+            
         </Container >
+        </div>
     )
 }
