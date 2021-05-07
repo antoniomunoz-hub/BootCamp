@@ -18,7 +18,7 @@ export default function App() {
     console.log("paso por aqui");
     e.preventDefault();
 
-    fetch('https://api.themoviedb.org/3/search/movie?api_key=64630dedf75d27e2299520a51e45e9b1b&query=' + movie)
+    fetch('https://api.themoviedb.org/3/search/movie?api_key=64630dedf75d27e2299520a51e45e9b1&query=' + movie)
       .then(response => response.json())
       .then(data => (setMovies(data.results)));
 
