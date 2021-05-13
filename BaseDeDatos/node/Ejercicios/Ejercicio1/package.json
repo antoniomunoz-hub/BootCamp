@@ -1,5 +1,5 @@
 {
-  "name": "chuleta",
+  "name": "Ejercicio1",
   "version": "1.0.0",
   "description": "A completed API using express.",
   "main": "server.js",
@@ -9,8 +9,7 @@
   "author": "\"Antonio\"",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.12.8"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

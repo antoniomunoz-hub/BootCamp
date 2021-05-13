@@ -1,27 +1,26 @@
+//Importamos nuestro archivo config con las variables de entornio
+require("./config/config")
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+const users = require("./routes/users")
 
 //Antes de las peticiones, usamos middlewares
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.json({message: "Petición GET recibida correctamente"});
+app.use("/users", users);
+
+mongoose.connect("mongodb://localhost:27017/users",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
 });
 
-app.get("/:id", (req, res) => {
-    let id = req.params.id;
-    res.json({message: `Petición GET recibida correctamente ${id}`});
-});
+const db = mongoose.connection;
 
- 
-app.post("/", (req, res) => {
-    let body = req.body;
+db.on("error", err => console.log("Connection to DB failed:", err));
+db.once("open", () => console.log("Conenection to DB succesfuly"));
 
-    if(body.username){
-        res.status(200).json({message: `Recibido Username:${body.username}`});
-    }else{
-        res.status(400).json({ok:false, message: "El Username es Obligatorio"});
-    }
-});
-
-app.listen(3000);
+app.listen(
+    process.env.PORT,
+    () => console.log("Listening on port", process.env.PORT));
