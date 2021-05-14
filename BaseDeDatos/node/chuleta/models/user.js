@@ -1,5 +1,5 @@
 const mongoose = require ("mongoose");
-const uniqueValidator = require("mongoose-unique-validator")
+const uniqueValidator = require("mongoose-unique-validator");
 
 let Schema = mongoose.Schema;
 
@@ -32,6 +32,16 @@ let userSchema = new Schema({
         default: true
     }
 });
+
+userSchema.methods.toJson = function (){
+    const user = this;
+
+    const userObject = {...user};// user.toObjetct()
+
+    delete userObject.password;
+
+    return user;
+}
 
 userSchema.plugin(uniqueValidator,{message:"{PATH} should be unique"});
 
