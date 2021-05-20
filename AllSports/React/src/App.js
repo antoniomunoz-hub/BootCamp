@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
 import CreateAccount from "./Pages/CreateAccount";
 import ForgotPassword from "./Pages/ForgotPassword";
@@ -18,21 +18,11 @@ export default function App() {
     <Router>
       <div>
         <Switch>
-          <Route path="/forgot-password">
-            <ForgotPassword></ForgotPassword>
-          </Route>
-          <Route path="/home">
-            <Home/>
-          </Route>
-          <Route path="/perfil">
-            <Perfil/>
-          </Route>
-          <Route path="/">
-            <Login />
-          </Route>
-          <Route path="/create-account">
-            <CreateAccount></CreateAccount>
-          </Route>
+          <Route path="/forgot-password" component={ForgotPassword}/>
+          <Route path="/home" component={Home}/> 
+          <Route path="/perfil" component={Perfil}/>
+          <Route exact path="/" component={Login}/>
+          <Route path="/create-account" component={CreateAccount}/>
         </Switch>
       </div>
     </Router>

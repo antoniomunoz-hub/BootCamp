@@ -25,6 +25,10 @@ body{
     width: 21.2rem;
 }
 
+.email{
+    background-color: rgb(0, 110, 255);
+}
+
 .entry{
     padding:3rem;
     background-color: white;
@@ -37,5 +41,19 @@ body{
 button{
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+    font-weight: 400;
+    font-weight: bold;
+    color: white;
+    font-weight: 700;
+}
+
+.entryaccount{
+    background-color: rgba(0, 153, 255, 0.904);
+    border-radius: 6px;   
+}
+
+.create{
+    background-color: rgb(13, 194, 13);
+    border-radius: 6px;
 }
 
