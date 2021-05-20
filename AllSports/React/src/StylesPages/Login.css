@@ -1,0 +1,41 @@
+.loginpage{
+    display: flex;
+    padding-top: 7.5rem;
+    margin-left: 2.5rem;
+
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+.entry input, a, button{
+    display: block;
+    margin: 0.5rem;
+    width: 20rem;
+    height: 1.75rem;
+}
+
+.entry a{
+    margin-left: 4rem;
+}
+
+.entry button{
+    height: 2rem;
+    width: 21.2rem;
+}
+
+.entry{
+    padding:3rem;
+    background-color: white;
+    min-height: 8rem;
+    margin-left: 10rem;
+    border-radius: 15px;
+    box-shadow: 8px 5px 5px  black;
+}
+
+button{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
