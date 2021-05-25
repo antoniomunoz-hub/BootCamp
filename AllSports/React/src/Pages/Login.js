@@ -11,7 +11,7 @@ export default function Login() {
         <div className="loginpage">
             <div className="">
                 <h2 className="logo">ALLSPORTS</h2>
-                <p className="text">Allsports te ayuda a conocer a personas que pueden lanzar tu carrera profesional</p>
+                <p className="text">Unete a la comunidad deportiva mas amplia del mundo, haz de tu pasion tu profesion</p>
             </div>
 
             <div className="entry">

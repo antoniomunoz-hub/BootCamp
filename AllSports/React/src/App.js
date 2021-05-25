@@ -11,6 +11,7 @@ import ForgotPassword from "./Pages/ForgotPassword";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Perfil from "./Pages/Perfil";
+import EditPerfil from "./Pages/EditPerfil";
 
 
 export default function App() {
@@ -23,7 +24,14 @@ export default function App() {
           <Route path="/perfil" component={Perfil}/>
           <Route exact path="/" component={Login}/>
           <Route path="/create-account" component={CreateAccount}/>
+          <Route path="/editperfil" component={EditPerfil}/>
         </Switch>
+        <footer>
+          <div> quien somos</div>
+          <div> ventajas</div>
+          <div> contacto</div>
+          <div>soporte</div>
+        </footer>
       </div>
     </Router>
   );

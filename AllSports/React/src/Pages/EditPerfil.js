@@ -1,27 +1,24 @@
 
 import React, { useState, useMemo } from 'react';
+import CountrySelector from '../Components/CountrySelector';
 
-import CountrySelector from "../Components/CountrySelector";
-
-export default function CreateAccount() {
-
+export default function EditPerfil() {
     return (
         <div>
-            <h2>Es Momento de unirte a la comuindad Allsports</h2><br/>
-            
+            <h2>Ha habido cambios ? Manten tu perfil al dia </h2>
             <form action="">
                 <fieldset>
                 <legend>Que perfil tienes?</legend>
                 <div>
-                    <input type="radio" name="typePerfil" id="athletePerfil"/>
-                    <label for="athletePerfil">Athleta</label>
+                    <input type="radio" name="typePerfil" id="athletePerfil" disabled/>
+                    <label for="athletePerfil" >Athleta</label>
                 </div>
                 <div>
-                    <input type="radio" name="typePerfil" id="coachPerfil"/>
+                    <input type="radio" name="typePerfil" id="coachPerfil" disabled/>
                     <label for="coachPerfil">Entrenador</label>
                 </div>
                 <div>
-                    <input type="radio" name="typePerfil" id="managerPerfil"/>
+                    <input type="radio" name="typePerfil" id="managerPerfil" disabled/>
                     <label for="managerPerfil">Manager</label>
                 </div>
                 </fieldset>
@@ -32,23 +29,23 @@ export default function CreateAccount() {
                     <div>
                         <h3>Datos Personales</h3>
                         <div class="imputblock">
-                        <label for="nameimput" >Nombre:</label><br/>
-                        <input type="text" id="nameimput" name="username" placeholder="Introduce tu nombre"/>
+                        <label for="nameimput">Nombre:</label><br/>
+                        <input type="text" id="nameimput" name="username" placeholder="Introduce tu nombre" disabled/>
                     </div>
 
                     <div class="imputblock">
                         <label for="lastimput">Apellidos:</label><br/>
-                        <input type="text" id="lastimput" name="lastname" placeholder="Introduce tu Apellidos"/>
+                        <input type="text" id="lastimput" name="lastname" placeholder="Introduce tu Apellidos" disabled/>
                     </div><br/>
                     
                     <div className="birthdate">
-                    Fecha: <input type="date" name="fecha"/>
+                    Fecha: <input type="date" name="fecha" disabled/>
                     </div>
 
                     <div className="sexo">
                         <h4>Sexo:</h4>
-                        <input type="radio" name="hm" value="h" required/> Hombre
-                        <input type="radio" name="hm" value="m"/> Mujer
+                        <input type="radio" name="hm" value="h" disabled/> Hombre
+                        <input type="radio" name="hm" value="m" disabled/> Mujer
                     </div>
 
                     <div class="imputblock">
@@ -74,4 +71,3 @@ export default function CreateAccount() {
         </div>    
     )
 }
-
