@@ -1,12 +1,11 @@
 .loginpage{
     display: flex;
     padding-top: 7.5rem;
-    margin-left: 2.5rem;
+    /* margin-left: 2.5rem; */
+    background-image:url("../images/pexels-andrew-dick-733500.jpg") ;
+    height: fit-content;
+    background-size: 120vh;
 
-}
-
-body{
-    background-color: whitesmoke;
 }
 
 .entry input, a, button{

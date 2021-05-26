@@ -11,15 +11,15 @@ export default function EditPerfil() {
                 <legend>Que perfil tienes?</legend>
                 <div>
                     <input type="radio" name="typePerfil" id="athletePerfil" disabled/>
-                    <label for="athletePerfil" >Athleta</label>
+                    <label htmlFor="athletePerfil" >Athleta</label>
                 </div>
                 <div>
                     <input type="radio" name="typePerfil" id="coachPerfil" disabled/>
-                    <label for="coachPerfil">Entrenador</label>
+                    <label htmlFor="coachPerfil">Entrenador</label>
                 </div>
                 <div>
                     <input type="radio" name="typePerfil" id="managerPerfil" disabled/>
-                    <label for="managerPerfil">Manager</label>
+                    <label htmlFor="managerPerfil">Manager</label>
                 </div>
                 </fieldset>
 
@@ -29,12 +29,12 @@ export default function EditPerfil() {
                     <div>
                         <h3>Datos Personales</h3>
                         <div class="imputblock">
-                        <label for="nameimput">Nombre:</label><br/>
+                        <label htmlFor="nameimput">Nombre:</label><br/>
                         <input type="text" id="nameimput" name="username" placeholder="Introduce tu nombre" disabled/>
                     </div>
 
                     <div class="imputblock">
-                        <label for="lastimput">Apellidos:</label><br/>
+                        <label htmlFor="lastimput">Apellidos:</label><br/>
                         <input type="text" id="lastimput" name="lastname" placeholder="Introduce tu Apellidos" disabled/>
                     </div><br/>
                     
@@ -54,15 +54,15 @@ export default function EditPerfil() {
                     </div>
 
                     <div class="imputblock">
-                        <label for="emailimput">Email:</label><br/>
+                        <label htmlFor="emailimput">Email:</label><br/>
                         <input required type="email" id="emailimput" name="Email" placeholder="Introduce tu Correo"/>
                     </div>
 
                     <div class="imputblock">
                         </div>
-                        <label for="paswordintput">Contraseña:</label><br/>
+                        <label htmlFor="paswordintput">Contraseña:</label><br/>
                         <input required type="password" id="paswordinput" name="password" placeholder="Introduce tu Contraseña"/>
-                        <label for="confirmpaswordintput"></label><br/>
+                        <label htmlFor="confirmpaswordintput"></label><br/>
                         <input required type="password" id="confirmpaswordinput" name="password" placeholder="Confirma Contraseña"/>
                     </div>    
                 </fieldset><br/>      

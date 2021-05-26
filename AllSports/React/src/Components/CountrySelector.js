@@ -8,6 +8,7 @@ export default function CountrySelector() {
     const options = useMemo(() => countryList().getData(), [])
   
     const changeHandler = value => {
+      console.log(options);
       setValue(value)
     }
   
