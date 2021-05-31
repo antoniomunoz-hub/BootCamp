@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import Select from 'react-select';
-import sports from "../data/ListSports";
+import sports from "../../data/ListSports";
 
 export default function SportsSelect() {
     const [value, setValue] = useState('')

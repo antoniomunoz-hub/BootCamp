@@ -2,10 +2,16 @@
     display: flex;
     padding-top: 7.5rem;
     /* margin-left: 2.5rem; */
-    background-image:url("../images/pexels-andrew-dick-733500.jpg") ;
-    height: fit-content;
-    background-size: 120vh;
+    background-image:url("../images/tatami.jpg") ;
+    /* height: fit-content; */
+    height: 100vh;
+    background-size: cover; /* contain */
+    background-position: start center;
+}
 
+.tittlepage{
+    color: blanchedalmond;
+    padding-left: 3rem;
 }
 
 .entry input, a, button{
@@ -35,6 +41,7 @@
     margin-left: 10rem;
     border-radius: 15px;
     box-shadow: 8px 5px 5px  black;
+    height: 30%;
 }
 
 button{

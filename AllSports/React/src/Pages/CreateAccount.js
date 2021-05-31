@@ -1,8 +1,10 @@
 
 import React, { useState, useMemo } from 'react';
 
-import CountrySelector from "../Components/CountrySelector";
-import SportsSelect from '../Components/SportsSelect';
+import CountrySelector from "../Components/Selects/CountrySelector";
+import SportsSelect from '../Components/Selects/SportsSelect';
+import ListWeights from '../Components/Selects/ListWheights';
+import "../StylesPages/Create&EditPerfil.css";
 
 export default function CreateAccount() {
 
@@ -56,6 +58,11 @@ export default function CreateAccount() {
                         <input type="radio" name="hm" value="m"/> Mujer
                     </div>
 
+                    <div className="weight">
+                        <h4>Peso:</h4>
+                        <ListWeights/>
+                    </div>
+
                     <div className="imputblock">
                         <h3>Pais:</h3>
                         <CountrySelector/><br/>
@@ -74,7 +81,7 @@ export default function CreateAccount() {
                         <input required type="password" id="confirmpaswordinput" name="password" placeholder="Confirma Contraseña"/>
                     </div>    
                 </fieldset><br/>      
-                <input type="submit" value="Enviar"></input> 
+                <input className type="submit" value="Enviar"></input> 
             </form>
         </div>    
     )
