@@ -1,0 +1,11 @@
+.data-user{
+    -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px; border: none;
+    background-position: left top;
+}
+
+.photo-main{
+    background-image: url("../images/pexels-rodnae-productions-7045408.jpg");
+    background-size:100% 40vh;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+}
