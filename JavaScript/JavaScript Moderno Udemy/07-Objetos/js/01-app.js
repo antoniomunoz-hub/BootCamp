@@ -62,9 +62,42 @@ console.log(señorio.personal.sueldos.seguridad);
 
 const {licencia, personal, personal: {sueldos: {seguridad}} } = señorio;
 
-console.log(sueldos);
+// console.log(sueldos);
 
 //Cuando una variable es definida como const no podemos reasignar una variable constante
 // sin embargo las propiedades de un objeto si se puede reasignar 
 
 //VEAMOS COMO PREVENIR ESTO
+
+// Object.freeze(usuario); no deja modificar las propiedades, ni agregar ni eliminar
+//Object.seal(usuario); no deja agregar ni eliminar pero SI modificar
+
+//Unir dos objetos
+
+const hijos ={
+    nombre1: "Cayetano",
+    sexo: "Varon"
+};
+
+// Spread operator o Rest Operator
+const resultado = Object.assign(usuario, hijos);
+
+console.log(resultado);
+
+const resultado2 ={...hijos, usuario};
+console.log(resultado2);
+
+
+// THIS
+
+const habitacion = {
+    televisor: "LG 49",
+    monitor: "Acer 27",
+    portatil: "MSI Bravo15",
+    videoConsola: "PS4",
+    mostrarInfo: function (){
+        console.log(`La habitacion contiene ${this.televisor}`)
+    }
+};
+
+habitacion.mostrarInfo();
