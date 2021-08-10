@@ -88,7 +88,7 @@ const resultado2 ={...hijos, usuario};
 console.log(resultado2);
 
 
-// THIS
+// THIS mezcla los valores es una forma de referirse a un objetco en si mismo porque uin objeto puede tener multiple informacion
 
 const habitacion = {
     televisor: "LG 49",
@@ -101,3 +101,32 @@ const habitacion = {
 };
 
 habitacion.mostrarInfo();
+
+//Objeto literal
+
+const grupo = {
+    voz: "Alberto",
+    sonajero: "Modesto",
+    guitarra: "Pelu",
+    percusion: false
+}
+
+//Objeto Constructor
+
+function Grupo(voz, sonajero){
+    this.voz = voz;
+    this.sonajero = sonajero;
+    this.percusion = false;
+}
+
+const grupo2 = new Grupo('salvi', 'guitarra nazareno');
+
+console.log(grupo2);
+
+// Object Keys Value y Entries
+
+console.log(Object.keys(grupo)); // retorna las llaves
+
+console.log(Object.values(grupo)); // retorna los valores
+
+console.log(Object.entries(grupo)); //retorna todo
