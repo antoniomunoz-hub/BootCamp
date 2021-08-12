@@ -50,3 +50,57 @@ switch(metodoDePago){
     break;
 }
 
+const cliente = true;
+const puedePagar = true;
+
+if(cliente && puedePagar){
+    console.log('Si puedes compra');
+}else if(!cliente){
+    console.log('Resgistrate como cliente');
+}else if(!puedePagar){
+    console.log('Dinero insuficiente');
+}
+else if(!puedePagar && !cliente){
+    console.log('No no puedes comprar');
+}
+
+const gastos = 850;
+const ingresos = 1500;
+const ingresosExtra = 450;
+const resto = (ingresosExtra + ingresos) - sueldo;
+
+if(resto < gastos || ingresos < gastos){
+    console.log('No llegas a fin de mes');
+}else{
+    console.log('Fondos insuficientes ');
+}
+
+const puntuacion = 450;
+
+function revisarPuntuacon(){
+    if(puntuacion > 400){
+        console.log('Excelente');
+    }
+    if(puntuacion > 300){
+        console.log('No esta mal enhorabuena');
+    }
+}
+
+revisarPuntuacon();
+
+const autentificacion = false;
+const logeado = true;
+const efectivo2 = 300;
+const credito2 = 400;
+const disponible2 = efectivo2 + credito2;
+const totalPagar2 = 600; 
+
+if(efectivo2 > totalPagar2 || credito2 > totalPagar2 || disponible2 > totalPagar2){
+    if(efectivo2 > totalPagar2){
+        console.log('Si pagaste con efectivo');
+    } else {
+        console.log('Otra forma de pago');
+    }
+} else {
+    console.log('Fondos Insuficientes');
+}
