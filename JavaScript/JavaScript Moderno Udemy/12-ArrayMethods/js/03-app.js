@@ -12,4 +12,38 @@ const carro = [
 let total = 0;
 
 carro.forEach(articulo => total += articulo.precio);
-    console.log(total);
+    
+console.log(total);
+
+// con reduce
+
+let resultado2 = carro.reduce( (total, articulo) => total + articulo.precio, 0 );
+
+console.log(resultado2);
+
+
+// Filter crea nuevo array basado en el parametro evaluado
+
+let resultFilter = carro.filter(articulo => articulo.precio > 500 );
+
+let resultFilter2 = carro.filter(articulo => articulo.precio < 500 );
+
+console.log(resultFilter);
+console.log(resultFilter2);
+
+// Find con foreach
+
+let resultado3 = '';
+
+carro.forEach((producto, index) =>{
+    if(producto.articulo === 'Zapatillas Dior'){
+        resultado3 = carro[index]
+    }
+});
+
+console.log(resultado3);
+
+// con .Find 
+
+const resultado4 = carro.find( producto => producto.articulo === 'Zapatillas Dior');
+console.log(resultado4);
