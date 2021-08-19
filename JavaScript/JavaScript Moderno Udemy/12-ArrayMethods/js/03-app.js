@@ -47,3 +47,10 @@ console.log(resultado3);
 
 const resultado4 = carro.find( producto => producto.articulo === 'Zapatillas Dior');
 console.log(resultado4);
+
+
+// Spread Operator añade un objeto o un elemento al array en una nueva constante, no modifica el array original
+
+const carro2 = [...carro, {articulo: 'Gucci Belt',precio: 350}];
+
+console.log(carro2);
