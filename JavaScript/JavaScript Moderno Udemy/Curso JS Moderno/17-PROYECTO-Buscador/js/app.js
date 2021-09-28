@@ -47,16 +47,20 @@ maximo.addEventListener('change', e => {
 });
 
 puertas.addEventListener('change', e => {
-    datosBusqueda.puertas = e.target.value;    
+    datosBusqueda.puertas = parseInt(e.target.value);
+    filtrarAuto()    
 });
 
 color.addEventListener('change', e => {
-    datosBusqueda.color = e.target.value;    
+    datosBusqueda.color = e.target.value;   
+    filtrarAuto()     
 });
 
 transmision.addEventListener('change', e => {
     datosBusqueda.transmision = e.target.value;    
     console.log(datosBusqueda);
+    filtrarAuto()    
+
 });
 
 //Eventos
@@ -98,14 +102,29 @@ function limpiarHTML(){
 
 }
 
+function noResultado() {
+    limpiarHTML();
+
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta', 'error');
+    noResultado.appendChild(document.createTextNode('No hay Resultados'));
+    document.querySelector('#resultado').appendChild(noResultado);
+}
+
+
 //Funcion que filtra en base a la busqueda
 
 function filtrarAuto(){
-    const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo)
+    const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filtrar(filtrarTransmision);
 
     // console.log(resultado);
-    mostrarAutos(resultado);
-}
+    if(resultado.length){
+        mostrarAutos(resultado);
+   } else {
+       noResultado();
+   }}
+
+// Filtros
 
 function filtrarMarca(auto){
     const {marca} = datosBusqueda;
@@ -122,7 +141,7 @@ function filtrarYear(auto){
     if(year){
         return auto.year === parseInt(year); // Parseamos y convertimos a entero el year ya que los datos que recibimos por el form es un string
     }
-        return auto;    
+    return auto;    
 }
 
 function filtrarMinimo(auto){
@@ -131,7 +150,7 @@ function filtrarMinimo(auto){
     if(minimo){
         return auto.precio >= minimo;
     }
-        return auto;
+    return auto;
 }
 
 function filtrarMaximo(auto){
@@ -140,7 +159,32 @@ function filtrarMaximo(auto){
     if(maximo){
         return auto.precio <= maximo;
     }
-        return auto;
+    return auto;
+}
+
+function filtrarPuertas(auto){
+    const {puertas} = datosBusqueda;
+
+    if(puertas){
+        return auto.puertas === puertas; 
+    }
+    return auto;    
+}
+
+function filtrarTransmision(auto){
+    const {transmision} = datosBusqueda;
+
+    if(transmision){
+        return auto.transmision === transmision; 
+    }
+    return auto; 
+}
+
+function filtrarColor(auto){
+    if(datosBusqueda.color){
+        return auto.color === datosBusqueda.color;
+    } 
+    return  auto;
 }
 //Genera los años del Select
 
@@ -152,4 +196,5 @@ function llenarSelect(){
         opcion.textContent = i;
         year.appendChild(opcion);
     } 
+
 }
