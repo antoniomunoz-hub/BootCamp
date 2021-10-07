@@ -15,11 +15,13 @@ function eventListeners(){
     formulario.addEventListener('submit', agregarTweet)
 
     //Cuando el documento esta listo
-    document.addEventListener('DOMCotentLoaded', () =>{
-        tweets = JSON.parse(localStorage.setItem('tweets'));
-
+    document.addEventListener('DOMContentLoaded', () => {
+        tweets = JSON.parse(localStorage.getItem('tweets')) || [];
         console.log(tweets);
+
+        crearHTML();
     });
+
 }
 
 //Funciones
@@ -80,6 +82,16 @@ function mostrarError(error){
 function crearHTML() {
     if(tweets.length > 0){
         tweets.forEach(tweet => {
+            //Agregar Boton de Eliminar
+            const btnEliminar = document.createElement('a');
+            btnEliminar.classList.add('borrar-tweet');
+            btnEliminar.innerText= 'X';
+
+            //Añadimos Funcion de Eliminar
+            btnEliminar.onclick = () => {
+                borrarTweet(tweet.id);
+            }
+            
             //Crear html
             
             const li = document.createElement('li');
@@ -89,6 +101,7 @@ function crearHTML() {
 
             //insertarlo en el html
             listaTweets.appendChild(li);
+            li.appendChild(btnEliminar);
         });
     }
 
@@ -99,6 +112,13 @@ function crearHTML() {
 
 function sincronizarStorage() { 
     localStorage.setItem('tweets', JSON.stringify(tweets));
+}
+
+//Elimina Tweet
+
+function borrarTweet(id){
+    tweets = tweets.filter( tweet => tweet.id !== id);
+    crearHTML();
 }
 
 //Limpiar HTML
