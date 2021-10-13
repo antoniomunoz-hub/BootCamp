@@ -44,14 +44,14 @@ function leerDatosCurso(curso){
                 if (curso.id === infoCurso.id){
                     curso.cantidad++;
                     return curso; //Retorna el objeto actualizado
-        } else {
-            return curso; //Retorna el obejeto que no son duplicados
+            } else {
+                return curso; //Retorna el obejeto que no son duplicados
         }
-    });
-    articulosCarrito = [...cursos]
-    
-    
-    
+    })
+    articulosCarrito = [...cursos];
+}  else {
+    articulosCarrito = [...articulosCarrito, infoCurso];
+}
     
     //Agrega elementos a arreglo de carrito
     //Copiamos el arreglo para que cada vez que hagamos click no se borre lo anterior 
@@ -105,4 +105,5 @@ function limpiarHTML() {
         contenedorCarrito.removeChild(contenedorCarrito.firstChild)
     }
 }
+
 
