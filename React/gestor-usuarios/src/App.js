@@ -7,6 +7,7 @@ function App(){
   console.log(formulario);
   return (
     <form>
+      <input type="text" name="name" placeholder="Nombre" value={formulario.name} onChange={handleChange}/>
     </form>
   )
 }
