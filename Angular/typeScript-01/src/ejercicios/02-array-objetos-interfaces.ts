@@ -8,7 +8,7 @@ console.log(habilidades);
 
 //Interfaz
 
-interface SetUp {
+interface Oficina {
     ordenador: string;
     monitor: string;
     soporte: string;
@@ -18,7 +18,7 @@ interface SetUp {
 
 //Objetos 
 
-const herramientas: SetUp = {
+const herramientas: Oficina = {
     ordenador: 'MSI',
     monitor: 'Acer',
     soporte: 'Ikea',
