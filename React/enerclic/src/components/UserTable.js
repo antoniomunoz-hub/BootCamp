@@ -15,25 +15,24 @@ export default function UserTable() {
    
     return (
         <div className="userList">
+          <thead>
+            <tr>
+              <td>Photo</td>
+              <td>Name</td>
+              <td>Last Name</td>
+              <td>Number Phone</td>
+              <td>Email</td>
+              <td>City</td>
+              <td>State</td>
+              <td>UserName</td>
+            </tr>
+          </thead>
           {/* Hacemos un map para que nos devuelva los resultados por cada usuario */}
               {users.map((user)=>{
                 return(
                   <div>
                     {/* Creacion de la tabla */}
                     <table>
-                      <thead>
-                        <tr>
-                          <th>Photo</th>
-                          <th>Name</th>
-                          <th>Last Name</th>
-                          <th>Number Phone</th>
-                          <th>Email</th>
-                          <th>City</th>
-                          <th>State</th>
-                          <th>UserName</th>
-                        </tr>
-                      </thead>
-                      
                         <tr>
                           <td>Photo</td>
                           <td>{user.name.first}</td>
@@ -44,7 +43,6 @@ export default function UserTable() {
                           <td>{user.location.state}</td>
                           <td>{user.login.username}</td>
                         </tr>
-
                     </table>
                   </div>
                 )
