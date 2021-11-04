@@ -15,9 +15,9 @@ export default function UserTable() {
    
     return (
         <div className="userList">
-          <thead>
-            <tr>
-              <td>Photo</td>
+          {/* cabezera de la tabla */}
+          <thead className="header">
+            <tr className="tittle">
               <td>Name</td>
               <td>Last Name</td>
               <td>Number Phone</td>
@@ -34,7 +34,6 @@ export default function UserTable() {
                     {/* Creacion de la tabla */}
                     <table>
                         <tr>
-                          <td>Photo</td>
                           <td>{user.name.first}</td>
                           <td>{user.name.last}</td>
                           <td>{user.cell}</td>
