@@ -13,5 +13,11 @@ table {
  }
 
  tr {
-    background: #eeeeee;
+    background: #fbf9f9;
  } 
+
+ .tittle{
+    background-color: rgb(9, 255, 0);
+    font-size: 25px;
+    font-family: 'Arial Narrow';
+ }

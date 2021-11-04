@@ -1,17 +1,8 @@
 import React,{useEffect, useState} from "react";
 import '../styles/UserTable.css'
 
-export default function UserTable() {
-  const[users, setUsers] = useState([]);
-  useEffect(() => {
-    //Llamada a la API RandomUser con un resultado de 20 usuarios 
-
-    fetch('https://randomuser.me/api/?results=20')
-    .then(response => response.json())
-    .then(data=>(setUsers(data.results)
-    ));
-    
-  }, [])
+export default function UserTable ({edit, users}) {
+  
    
     return (
         <div className="userList">
@@ -43,7 +34,7 @@ export default function UserTable() {
                             <td>{user.location.city}</td>
                             <td>{user.location.state}</td>
                             <td>{user.login.username}</td>
-                            <td><button className="edit">Edit</button></td>
+                            <td><button onClick={()=>edit(user)} className="edit">Edit</button></td>
                             <td><button className="delete">Delete</button></td>
                           </tr>
                     </>
