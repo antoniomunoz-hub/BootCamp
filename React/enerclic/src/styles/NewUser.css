@@ -1,4 +1,4 @@
-button{
+.submit{
     transition: all 0.5s ease;
     background-color: #2185D0;
     border-radius: 5px;
@@ -10,6 +10,18 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+button{
+    border-radius: 5px;
+}
+
+.submit:hover{
     background-color: yellowgreen;
+}
+
+.delete:hover{
+    background-color: red;
+}
+
+.edit:hover{
+    background-color: blue;
 }

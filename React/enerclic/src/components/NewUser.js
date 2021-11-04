@@ -26,7 +26,7 @@ export default function NewUser() {
                     <Input label= "City" name="city" value={formulario.city} placeholder= 'City' onChange={handleChange}/>
                     <Input label= "State" name="state" value={formulario.state} placeholder= 'State' onChange={handleChange}/>
                     <Input label= "UserName" name="username" value={formulario.username} placeholder= 'User Name' onChange={handleChange}/>
-                    <button>Enviar</button>
+                    <submit className="submit">Enviar</submit>
                 </form>        
             </Container>
         </div>
