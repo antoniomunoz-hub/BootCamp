@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from "react";
 import '../styles/UserTable.css'
 
-export default function UserTable ({edit, users}) {
+export default function UserTable ({edit, deleteUser, users}) {
   
    
     return (
@@ -21,25 +21,26 @@ export default function UserTable ({edit, users}) {
                 <td>Delete</td>
               </tr>
             </thead>
-            {/* Hacemos un map para que nos devuelva los resultados por cada usuario */}
-                {users.map((user)=>{
-                  return(
-                    <>
-                      {/* Creacion de la tabla */}
-                          <tr>
-                            <td>{user.name.first}</td>
-                            <td>{user.name.last}</td>
-                            <td>{user.cell}</td>
-                            <td>{user.email}</td>
-                            <td>{user.location.city}</td>
-                            <td>{user.location.state}</td>
-                            <td>{user.login.username}</td>
-                            <td><button onClick={()=>edit(user)} className="edit">Edit</button></td>
-                            <td><button className="delete">Delete</button></td>
-                          </tr>
-                    </>
-                  )
-                })}
+              <tbody>
+              {/* Hacemos un map para que nos devuelva los resultados por cada usuario */}
+                  {users.map((user)=>{
+                    return(
+                      
+                      <tr key={user.email}>
+                        <td>{user.name.first}</td>
+                        <td>{user.name.last}</td>
+                        <td>{user.cell}</td>
+                        <td>{user.email}</td>
+                        <td>{user.location.city}</td>
+                        <td>{user.location.state}</td>
+                        <td>{user.login.username}</td>
+                        <td><button onClick={()=>edit(user)} className="edit">Edit</button></td>
+                        <td><button onClick={()=>deleteUser(user)} className="delete">Delete</button></td>
+                      </tr>
+            
+                    )
+                  })}
+                </tbody>
           </table>    
         </div>
     )

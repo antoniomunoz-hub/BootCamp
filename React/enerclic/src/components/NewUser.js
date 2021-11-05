@@ -1,31 +1,100 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Input from './Input'
 import '../styles/NewUser.css'
 import Container from './Container'
 import useFormulario from '../hooks/useFormulario'
-import { useState } from 'react'
 
 
 export default function NewUser({user, users, setUsers}) {
-    const [formulario, handleChange, reset] = useFormulario({user})
+    const [formulario, handleChange, setFormulario,reset] = useFormulario({
+      firstName: '',
+      lastName: '',
+      cell:'',
+      email:'',
+      city:'',
+      state:'',
+      username:''
+    })
+
+    useEffect(()=> setFormulario({
+
+      firstName: user.name.first,
+      lastName: user.name.last,
+      cell:user.cell,
+      email:user.email,
+      city:user.location.city,
+      state:user.location.state,
+      username:user.login.username
+    })
+    , [user, setFormulario]);
     const submit = e => {
-        console.log(user);
       e.preventDefault()
-      setUsers([...users, formulario])
+      var index = users.findIndex(u=>u.name.last === formulario.lastName);
+
+      let userToUpdate = {
+          
+        name:{
+            first: formulario.firstName, 
+            last: formulario.lastName
+          },
+        email: formulario.email, 
+        cell: formulario.cell, 
+        location: { 
+          city: formulario.city, 
+          state: formulario.state
+        },
+        login: { 
+          username: formulario.username
+        }
+      };
+  if (index === -1){
+    setUsers([...users, 
+      {
+        name:{
+            first: formulario.firstName, 
+            last: formulario.lastName
+          },
+        email: formulario.email, 
+        cell: formulario.cell, 
+        location: { 
+          city: formulario.city, 
+          state: formulario.state
+        },
+        login: { 
+          username: formulario.username
+        }
+      }
+    ])
+
+  }
+  else
+    setUsers([
+      ...users.slice(0,index),
+      userToUpdate,
+      ...users.slice(index+1)
+    ]
+        );
+
+
+
+
+
+      
+      
     } 
     return (
         <div>
             <Container>
                 <h2>Registra un nuevo Usuario</h2>
                 <form onSubmit={submit}>
-                    <Input label= "Name" name="name" value={formulario.name.first} placeholder= 'Name' onChange={handleChange}/>
-                    <Input label= "Last Name" name="lastname" value={formulario.name.last} placeholder= 'Last Name' onChange={handleChange}/>
-                    <Input label= "Phone" name="numberphone" value={formulario.cell} placeholder= 'Number Phone' onChange={handleChange}/>
+                    <Input label= "Name" name="firstName" value={formulario.firstName} placeholder= 'Name' onChange={handleChange}/>
+                    <Input label= "Last Name" name="lastName" value={formulario.lastName} placeholder= 'Last Name' onChange={handleChange}/>
+                    <Input label= "Phone" name="cell" value={formulario.cell} placeholder= 'Number Phone' onChange={handleChange}/>
                     <Input label= "Email" name="email" value={formulario.email} placeholder= 'Email' onChange={handleChange}/>
-                    <Input label= "City" name="city" value={formulario.location.city} placeholder= 'City' onChange={handleChange}/>
-                    <Input label= "State" name="state" value={formulario.location.state} placeholder= 'State' onChange={handleChange}/>
-                    <Input label= "UserName" name="username" value={formulario.login.username} placeholder= 'User Name' onChange={handleChange}/>
-                    <submit className="submit">Enviar</submit>
+                    <Input label= "City" name="city" value={formulario.city} placeholder= 'City' onChange={handleChange}/>
+                    <Input label= "State" name="state" value={formulario.state} placeholder= 'State' onChange={handleChange}/>
+                    <Input label= "UserName" name="username" value={formulario.username} placeholder= 'User Name' onChange={handleChange}/>
+                    <button type="submit" className="submit">Enviar</button>
                 </form>        
             </Container>
         </div>
