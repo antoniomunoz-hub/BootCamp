@@ -6,7 +6,7 @@ import useFormulario from '../hooks/useFormulario'
 
 
 export default function NewUser({user, users, setUsers}) {
-    const [formulario, handleChange, setFormulario,reset] = useFormulario({
+    const [formulario, handleChange, setFormulario] = useFormulario({
       firstName: '',
       lastName: '',
       cell:'',
@@ -32,11 +32,11 @@ export default function NewUser({user, users, setUsers}) {
       var index = users.findIndex(u=>u.name.last === formulario.lastName);
 
       let userToUpdate = {
-          
+
         name:{
             first: formulario.firstName, 
             last: formulario.lastName
-          },
+        },
         email: formulario.email, 
         cell: formulario.cell, 
         location: { 
@@ -53,7 +53,7 @@ export default function NewUser({user, users, setUsers}) {
         name:{
             first: formulario.firstName, 
             last: formulario.lastName
-          },
+        },
         email: formulario.email, 
         cell: formulario.cell, 
         location: { 
@@ -74,13 +74,7 @@ export default function NewUser({user, users, setUsers}) {
       ...users.slice(index+1)
     ]
         );
-
-
-
-
-
-      
-      
+  
     } 
     return (
         <div>

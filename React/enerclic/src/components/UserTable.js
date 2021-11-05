@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React from "react";
 import '../styles/UserTable.css'
 
 export default function UserTable ({edit, deleteUser, users}) {
@@ -26,7 +26,7 @@ export default function UserTable ({edit, deleteUser, users}) {
                   {users.map((user)=>{
                     return(
                       
-                      <tr key={user.email}>
+                      <tr key={user.name.last}>
                         <td>{user.name.first}</td>
                         <td>{user.name.last}</td>
                         <td>{user.cell}</td>

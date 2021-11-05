@@ -12,7 +12,7 @@ function App() {
     setUser(user)
   }
   const deleteUser = (user) =>{
-    setUsers(users.filter(u=> u.name.last != user.name.last))
+    setUsers(users.filter(u => u.name.last !== user.name.last))
   }
   useEffect(() => {
     //Llamada a la API RandomUser con un resultado de 20 usuarios 
