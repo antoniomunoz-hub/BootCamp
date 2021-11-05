@@ -29,6 +29,7 @@ export default function NewUser({user, users, setUsers}) {
     , [user, setFormulario]);
     const submit = e => {
       e.preventDefault()
+      // Filtramos por el apellido del usuario para cargarlo, si existe lo modifica y si no lo añade como nuevo
       var index = users.findIndex(u=>u.name.last === formulario.lastName);
 
       let userToUpdate = {
@@ -73,13 +74,13 @@ export default function NewUser({user, users, setUsers}) {
       userToUpdate,
       ...users.slice(index+1)
     ]
-        );
+      );
   
     } 
     return (
         <div>
             <Container>
-                <h2>Registra un nuevo Usuario</h2>
+                <h2>Selecciona El Usuario a Editar o Registralo</h2>
                 <form onSubmit={submit}>
                     <Input label= "Name" name="firstName" value={formulario.firstName} placeholder= 'Name' onChange={handleChange}/>
                     <Input label= "Last Name" name="lastName" value={formulario.lastName} placeholder= 'Last Name' onChange={handleChange}/>

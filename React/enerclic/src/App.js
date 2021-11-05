@@ -5,10 +5,10 @@ import React,{useEffect, useState} from "react";
 
 
 function App() {
+  // const users engloba a la tabla y user al editado o creado
   const[users, setUsers] = useState([]);
   const[user, setUser] = useState({name:{first:'', last:''},  email: '', cell: '', location: { city: '', state: ''},login:{ username: ''}});
   const edit = (user)=>{
-    console.log(user);
     setUser(user)
   }
   const deleteUser = (user) =>{
@@ -24,7 +24,7 @@ function App() {
   }, [])
  
   
-  
+  // pasamos los parametros al componente para trabajar en el app.js
   return (
       <div className="App"> 
       <UserTable edit={edit} deleteUser={deleteUser} users={users}></UserTable>
