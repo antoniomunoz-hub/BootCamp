@@ -7,4 +7,4 @@ while(i <= 100 ){
         totalCount += i; // vamos sumando lo que cale i y pisando el valor de totalCount
     }
 }
-document.write(`El valor total de los numeros pares del o al 100 es ${totalCount}`);
+ document.write(`El valor total de los numeros pares del o al 100 es ${totalCount}`);

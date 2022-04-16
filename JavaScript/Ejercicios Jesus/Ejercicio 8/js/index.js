@@ -22,3 +22,9 @@ console.log(typeof numberReal);
     }
 
 }
+
+for( i = n ; i<=1; n--)
+
+
+
+

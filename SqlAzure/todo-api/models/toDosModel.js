@@ -15,10 +15,10 @@ const addTodo = (todoData) => {
     `;
     const parameters = [
         {name: 'todoID', type : TYPES.UniqueIdentifier, value: todoID},
-        {name: 'author', type : TYPES.UniqueIdentifier, value: author},
-        {name: 'todoDate', type : TYPES.UniqueIdentifier, value: todoDate},
-        {name: 'description', type : TYPES.UniqueIdentifier, value: description},
-        {name: 'state', type : TYPES.UniqueIdentifier, value: state},
+        {name: 'author', type : TYPES.VarChar, value: author},
+        {name: 'todoDate', type : TYPES.DateTime, value: todoDate},
+        {name: 'description', type : TYPES.VarChar, value: description},
+        {name: 'state', type : TYPES.SmallInt, value: state},
     ];
     return execQuery.execReadCommand(query, parameters);
 };
@@ -38,10 +38,10 @@ const updateTodo = (todoData) => {
     `;
     const parameters = [
         {name: 'todoID', type : TYPES.UniqueIdentifier, value: todoID},
-        {name: 'author', type : TYPES.UniqueIdentifier, value: author},
-        {name: 'todoDate', type : TYPES.UniqueIdentifier, value: todoDate},
-        {name: 'description', type : TYPES.UniqueIdentifier, value: description},
-        {name: 'state', type : TYPES.UniqueIdentifier, value: state},
+        {name: 'author', type : TYPES.VarChar, value: author},
+        {name: 'todoDate', type : TYPES.DateTime, value: todoDate},
+        {name: 'description', type : TYPES.VarChar, value: description},
+        {name: 'state', type : TYPES.SmallInt, value: state},
     ];
     return execQuery.execReadCommand(query, parameters);
 };
@@ -115,3 +115,6 @@ module.exports = [
     completeTodo,
     changeStateTodo,
 ];
+
+
+
